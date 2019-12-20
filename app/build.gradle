@@ -1,0 +1,340 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.bugtags.library.plugin'
+
+
+android {
+    compileSdkVersion  rootProject.ext.android.compileSdkVersion
+    buildToolsVersion  rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        flavorDimensions "versionCode"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        packagingOptions {
+            exclude 'META-INF/rxjava.properties'
+            exclude 'lib/x86_64/darwin/libscrypt.dylib'
+            exclude 'lib/x86_64/freebsd/libscrypt.so'
+            exclude 'lib/x86_64/linux/libscrypt.so'
+        }
+        //配置阿里ARouter路由
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+
+
+        signingConfigs {
+            debug {
+                storeFile file("${STORE_FILE_DEBUG}")
+                storePassword "${STORE_PWD_DEBUG}"
+                keyAlias "${KEY_ALIAS_DEBUG}"
+                keyPassword "${KEY_PWD_DEBUG}"
+                v1SigningEnabled true
+                v2SigningEnabled true
+
+            }
+
+            release {
+                storeFile file("${STORE_FILE}")
+                storePassword "${STORE_PWD}"
+                keyAlias "${KEY_ALIAS}"
+                keyPassword "${KEY_PWD}"
+                v1SigningEnabled true
+                v2SigningEnabled true
+
+            }
+        }
+
+        buildTypes {
+            release {
+                minifyEnabled true
+                signingConfig signingConfigs.release
+                shrinkResources true  //去除无用的resource文件
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                ndk {
+                    abiFilters "armeabi", "armeabi-v7a", "x86_64","x86" // 保留架构的CPU
+                }
+            }
+
+            debug {
+                minifyEnabled false  //是否开启混淆
+                shrinkResources false//去除无用的resource文件
+                signingConfig signingConfigs.debug
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                ndk {
+                    abiFilters "armeabi", "armeabi-v7a", "x86_64","x86" // 保留架构的CPU
+                }
+            }
+        }
+
+        productFlavors {
+            Mall{}
+        }
+
+        productFlavors.all {
+            flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+    }
+    //Add the following configuration
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+}
+
+
+bugtags {
+    appKey "6139f18f4edb7671b228d4f617d11236"
+    appSecret "34d8d64d7f5a458bc3c3cbb68ff1efc6"
+    mappingUploadEnabled true
+}
+
+
+
+greendao {
+    //数据库的schema版本，也可以理解为数据库版本号
+    schemaVersion 4
+    //设置DaoMaster、DaoSession、Dao包名，也就是要放置这些类的包的全路径
+    daoPackage 'com.sdbz.dbank.model.greendao'
+    //设置DaoMaster、DaoSession、Dao目录
+    targetGenDir 'src/main/java'
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //support
+    implementation rootProject.ext.support["kotlin"]
+    implementation rootProject.ext.support["appcompat-v7"]
+    implementation rootProject.ext.support["support-v4"]
+    implementation rootProject.ext.support["recyclerview-v7"]
+    implementation rootProject.ext.support["constraint-layout"]
+    implementation rootProject.ext.support["design"]
+    implementation rootProject.ext.support["cardview"]
+    implementation rootProject.ext.support["support-v13"]
+    implementation rootProject.ext.support["animated-vector-drawable"]
+    testImplementation rootProject.ext.support["junit"]
+    androidTestImplementation rootProject.ext.support["support.test:runner"]
+    androidTestImplementation rootProject.ext.support["support_test_espresso"]
+
+    //takephoto
+    implementation project(':takephoto_library')
+
+    //二维码
+    implementation project(':library-zxing')
+
+    //应用内更新
+    implementation project(':library-update-app')
+
+    //NineOldAndroids动画
+    implementation files('libs/nineoldandroids-2.4.0.jar')
+
+    //商城沉浸式Banner
+    implementation project(':library-shop-banner')
+
+    //腾讯 TBS SDK  X5内核WebView
+
+    //implementation files('libs/tbs_sdk_thirdapp_v4.3.0.1020_43633_sharewithdownload_withoutGame_obfs_20190111_105200.jar')
+
+    //butterknife
+    implementation rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+
+    //banner
+    implementation rootProject.ext.dependencies["banner"]
+
+    //Glide
+    implementation rootProject.ext.dependencies["Glide"]
+
+    //GreenDAO
+    implementation rootProject.ext.dependencies["GreenDAO"]
+
+    //图片选择器
+    implementation rootProject.ext.dependencies["PictureSelector"]
+
+    //permission
+    implementation rootProject.ext.dependencies["permission"]
+
+    //meiqiasdk
+    implementation rootProject.ext.dependencies["meiqiasdk"]
+
+    // leakcanary内存泄漏检测
+    debugImplementation rootProject.ext.dependencies["leakcanary-android"]
+    debugImplementation rootProject.ext.dependencies["leakcanary-support-fragment"]
+    releaseImplementation rootProject.ext.dependencies["leakcanary-android-no-op"]
+
+    //阿里商城Vlayout
+    implementation(rootProject.ext.dependencies["Vlayout"]) {
+        transitive = true
+    }
+
+    //Arouter路由
+    implementation rootProject.ext.dependencies["Arouter"]
+    annotationProcessor rootProject.ext.dependencies["Arouter-compiler"]
+
+    //Dagger2
+    implementation rootProject.ext.dependencies["dagger"]
+    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+
+    //Picasso
+    implementation rootProject.ext.dependencies["Picasso"]
+
+    //EventBus
+    implementation rootProject.ext.dependencies["EventBus"]
+
+    //SmartRefreshLayout下拉刷新库
+    implementation rootProject.ext.dependencies["SmartRefreshLayout"]
+    implementation rootProject.ext.dependencies["SmartRefreshHeader"]
+
+    //OkhttpUtils
+    implementation rootProject.ext.dependencies["OkhttpUtils"]
+
+    //Gson
+    implementation rootProject.ext.dependencies["Gson"]
+
+    //TakePhoto Android设备上获取照片
+
+    //implementation         rootProject.ext.dependencies["takephoto"]
+
+    //okhttp3
+    implementation rootProject.ext.dependencies["okhttp3"]
+
+    //okgo
+    implementation rootProject.ext.dependencies["okgo"]
+    implementation rootProject.ext.dependencies["okgo-okrx2"]
+    implementation rootProject.ext.dependencies["okgo-okserver"]
+    implementation rootProject.ext.dependencies["chuck:library"]
+
+    //Rxjava  Rxandroid  Rxbinding
+    implementation rootProject.ext.dependencies["Rxjava"]
+    implementation rootProject.ext.dependencies["Rxandroid"]
+    implementation rootProject.ext.dependencies["Rxbinding"]
+
+    //腾讯Bugly
+    implementation rootProject.ext.dependencies["Bugly"]
+
+    // 以太坊web3j
+    implementation rootProject.ext.dependencies["web3j"]
+
+    // bitcoinj
+    implementation rootProject.ext.dependencies["bitcoinj"]
+
+    //LoadingDialog
+    implementation rootProject.ext.dependencies["LoadingDialog"]
+
+    //友盟
+    implementation rootProject.ext.dependencies["umeng-analytics"]
+    implementation rootProject.ext.dependencies["umeng-common"]
+    implementation rootProject.ext.dependencies["umeng-utdid"]
+    implementation rootProject.ext.dependencies["umeng-push"]
+
+    //Agentweb WebView
+    implementation rootProject.ext.dependencies["agentweb"]
+    implementation rootProject.ext.dependencies["agentweb-download"]
+    implementation rootProject.ext.dependencies["agentweb-filechooser"]
+
+    //Logger
+    implementation rootProject.ext.dependencies["Logger"]
+
+    //MPAndroidChart折线图
+    implementation rootProject.ext.dependencies["MPAndroidChart"]
+
+    //UIWidget 仿IOS对话框
+    implementation rootProject.ext.dependencies["UIWidget-core"]
+    implementation rootProject.ext.dependencies["UIWidget-alert"]
+    implementation rootProject.ext.dependencies["UIWidget-collapsing"]
+
+    //BRVAH
+    implementation rootProject.ext.dependencies["BRVAH"]
+
+    //FlycoTabLayout
+    implementation rootProject.ext.dependencies["FlycoTabLayout"]
+
+    //Coolindicator webView加载进度
+    implementation rootProject.ext.dependencies["Coolindicator"]
+
+    //AndroidViewAnimations实现安卓动画
+    implementation rootProject.ext.dependencies["easing-library"]
+    implementation rootProject.ext.dependencies["ViewAnimations-library"]
+
+    //JSbridge
+    implementation rootProject.ext.dependencies["JSbridge"]
+
+    //facebook Stetho
+    implementation rootProject.ext.dependencies["Stetho"]
+
+    //SpinKit 进度条
+    implementation rootProject.ext.dependencies["SpinKit"]
+
+    //SweetAlertDialog
+    implementation rootProject.ext.dependencies["SweetAlertDialog"]
+
+    //沉浸式状态栏ImmersionBar
+    implementation rootProject.ext.dependencies["ImmersionBar"]
+
+    //圆形imageView
+    implementation rootProject.ext.dependencies["circleimage"]
+
+    //apache
+    implementation rootProject.ext.dependencies["apache"]
+
+    //可拖拽的小红点badgeview
+    implementation rootProject.ext.dependencies["badgeview"]
+
+    //fastjson
+    implementation rootProject.ext.dependencies["fastjson"]
+
+    //BottomNavigationViewEx
+    implementation rootProject.ext.dependencies["BottomNavigationViewEx"]
+
+    // 商城阻尼下拉刷新 Ultra Pull To Refresh
+    implementation rootProject.ext.dependencies["Ultra-Pull-To-Refresh"]
+
+    //骨架屏Skeleton
+    implementation rootProject.ext.dependencies["skeleton"]
+    implementation rootProject.ext.dependencies["shimmer"]
+
+    //BugTag
+    implementation rootProject.ext.dependencies["BugTag"]
+
+    //RxEasyHttp
+    implementation rootProject.ext.dependencies["RxEasyHttp"]
+
+    //引导NewbieGuide
+    implementation rootProject.ext.dependencies["NewbieGuide"]
+
+    //通过标签直接生成shape，无需再写shape.xml
+    implementation rootProject.ext.dependencies["shape-background"]
+
+    //Logger
+    implementation rootProject.ext.dependencies["Logger"]
+
+    //屏幕适配Autosize
+
+    // implementation         rootProject.ext.dependencies["Autosize"]
+
+    // IDCardCamera
+    implementation rootProject.ext.dependencies["IDCardCamera"]
+
+    //Google验证手机号
+    implementation files('libs/libphonenumber.jar')
+    implementation files('libs/tbs_sdk_thirdapp_v4.3.0.1020_43633_sharewithdownload_withoutGame_obfs_20190111_105200.jar')
+}

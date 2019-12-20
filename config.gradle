@@ -1,0 +1,233 @@
+ext {
+    //android开发版本配置
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.2",
+            applicationId    : "com.tymall",
+            minSdkVersion    : 16,
+            targetSdkVersion : 29,
+            versionCode      : 59,
+            versionName      : "3.3.4",
+    ]
+
+    //version配置
+    versions = [
+            "support-version"                : "28.0.0",
+            "junit-version"                  : "4.12",
+            "kotlin_version"                 : "1.3.41",
+            "constraint_version"             : "1.1.3",
+            "support_test_runner_version"    : "1.0.2",
+            "support_test_espresso_version"  : "3.0.2",
+    ]
+    //support配置
+    support = [
+            "constraint-layout"       : "com.android.support.constraint:constraint-layout:${versions["constraint_version"]}",
+            'support-v4'              : "com.android.support:support-v4:${versions["support-version"]}",
+            'appcompat-v7'            : "com.android.support:appcompat-v7:${versions["support-version"]}",
+            'recyclerview-v7'         : "com.android.support:recyclerview-v7:${versions["support-version"]}",
+            'support-v13'             : "com.android.support:support-v13:${versions["support-version"]}",
+            'support-fragment'        : "com.android.support:support-fragment:${versions["support-version"]}",
+            'cardview'                : "com.android.support:cardview-v7:${versions["support-version"]}",
+            'design'                  : "com.android.support:design:${versions["support-version"]}",
+            'animated-vector-drawable': "com.android.support:animated-vector-drawable:${versions["support-version"]}",
+            'junit'                   : "junit:junit:${versions["junit-version"]}",
+            'support.test:runner'     : "com.android.support.test:runner:${versions["support_test_runner_version"]}",
+            'support_test_espresso'   : "com.android.support.test.espresso:espresso-core:${versions["support_test_espresso_version"]}",
+            "kotlin"                  : "org.jetbrains.kotlin:kotlin-stdlib:${versions["skotlin_version"]}",
+    ]
+    //依赖maven第三方配置
+    dependencies = [
+
+            //butterknife
+            "butterknife"                          : "com.jakewharton:butterknife:9.0.0",
+            "butterknife-compiler"                 : "com.jakewharton:butterknife-compiler:9.0.0",
+
+            //banner
+            "banner"                               : "com.youth.banner:banner:1.4.10",
+
+            //Glide
+            "Glide"                                : "com.github.bumptech.glide:glide:4.9.0",
+
+            //GreenDAO
+            "GreenDAO"                             : "org.greenrobot:greendao:3.2.0",
+
+            //图片选择器
+            "PictureSelector"                      : "com.github.LuckSiege.PictureSelector:picture_library:v2.2.3",
+
+            //permission
+            "permission"                           : "com.yanzhenjie:permission:2.0.0-rc4",
+
+            //meiqiasdk
+            "meiqiasdk"                            : "com.meiqia:meiqiasdk:3.5.0@aar",
+
+
+            // leakcanary内存泄漏检测
+            "leakcanary-android"                   : "com.squareup.leakcanary:leakcanary-android:1.6.3",
+            "leakcanary-support-fragment"          : "com.squareup.leakcanary:leakcanary-support-fragment:1.6.3",
+            "leakcanary-android-no-op"             : "com.squareup.leakcanary:leakcanary-android-no-op:1.6.3",
+
+
+            //阿里商城Vlayout
+            "Vlayout"                              : "com.alibaba.android:vlayout:1.2.8@aar",
+
+            //Arouter路由
+            "Arouter"                              : "com.alibaba:arouter-api:1.4.1",
+            "Arouter-compiler"                     : "com.alibaba:arouter-compiler:1.2.2",
+
+            //Dagger2
+            "dagger"                               : "com.google.dagger:dagger:2.16",
+            "dagger-compiler"                      : "com.google.dagger:dagger-compiler:2.16",
+
+
+            //Picasso
+            "Picasso"                              : "com.squareup.picasso:picasso:2.5.2",
+
+            //EventBus
+            "EventBus"                             : "org.greenrobot:eventbus:3.1.1",
+
+            //SmartRefreshLayout下拉刷新库
+            "SmartRefreshLayout"                   : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-22",
+            "SmartRefreshHeader"                   : "com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-22",
+
+            //OkhttpUtils
+            "OkhttpUtils"                          : "com.qianwen:okhttp-utils:3.8.0",
+
+
+            //Gson
+            "Gson"                                 : "com.google.code.gson:gson:2.8.5",
+
+
+            //TakePhoto Android设备上获取照片
+            "takephoto"                            : "com.jph.takephoto:takephoto_library:4.0.3",
+
+            //okhttp3
+            "okhttp3"                              : "com.squareup.okhttp3:okhttp:3.11.0",
+
+
+            //okgo
+            "okgo"                                 : "com.lzy.net:okgo:3.0.4",
+            "okgo-okrx2"                           : "com.lzy.net:okrx2:2.0.2",
+            "okgo-okserver"                        : "com.lzy.net:okserver:2.0.5",
+            "chuck:library"                        : "com.readystatesoftware.chuck:library:1.0.4",
+
+            //Rxjava  Rxandroid  Rxbinding
+            "Rxjava"                               : "io.reactivex.rxjava2:rxjava:2.2.5",
+            "Rxandroid"                            : "io.reactivex.rxjava2:rxandroid:2.1.0",
+            "Rxbinding"                            : "com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2",
+
+            //腾讯Bugly
+            "Bugly"                                : "com.tencent.bugly:crashreport:2.8.6.0",
+
+
+            // 以太坊web3j
+            "web3j"                                : "org.web3j:core:3.3.1-android",
+
+            // bitcoinj
+            "bitcoinj"                             : "org.bitcoinj:bitcoinj-core:0.14.7",
+
+            //LoadingDialog
+            "LoadingDialog"                        : "com.github.ForgetAll:LoadingDialog:v1.0.4",
+
+            //友盟
+            "umeng-analytics"                      : "com.umeng.sdk:analytics:7.5.3",
+            "umeng-common"                         : "com.umeng.umsdk:common:1.5.4",
+            "umeng-utdid"                          : "com.umeng.umsdk:utdid:1.1.5.3",
+            "umeng-push"                           : "com.umeng.umsdk:push:6.0.1",
+
+            //Agentweb WebView
+            "agentweb"                             : "com.just.agentweb:agentweb:4.0.2",
+            "agentweb-download"                    : "com.just.agentweb:download:4.0.2",
+            "agentweb-filechooser"                 : "com.just.agentweb:filechooser:4.0.2",
+
+            //Logger
+            "Logger"                               : "com.orhanobut:logger:2.2.0",
+
+            //MPAndroidChart折线图
+            "MPAndroidChart"                       : "com.github.PhilJay:MPAndroidChart:v3.1.0-alpha",
+
+            //UIWidget 仿IOS对话框
+            "UIWidget-core"                        : "com.github.AriesHoo.UIWidget:widget-core:3.2.6",
+            "UIWidget-alert"                       : "com.github.AriesHoo.UIWidget:widget-alert:3.2.6",
+            "UIWidget-collapsing"                  : "com.github.AriesHoo.UIWidget:widget-collapsing:3.2.6",
+
+            //BRVAH
+            "BRVAH"                                : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47",
+
+            //FlycoTabLayout
+            "FlycoTabLayout"                       : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
+
+            //Coolindicator webView加载进度
+            "Coolindicator"                        : "com.coolindicator.sdk:coolindicator:1.0.0-beta",
+
+            //AndroidViewAnimations实现安卓动画
+            "easing-library"                       : "com.daimajia.easing:library:2.0@aar",
+            "ViewAnimations-library"               : "com.daimajia.androidanimations:library:2.3@aar",
+
+            //JSbridge
+            "JSbridge"                             : "com.github.lzyzsd:jsbridge:1.0.4",
+
+            //facebook Stetho
+            "Stetho"                               : "com.facebook.stetho:stetho:1.5.0",
+
+            //SpinKit 进度条
+            "SpinKit"                              : "com.github.ybq:Android-SpinKit:1.2.0",
+
+            //SweetAlertDialog
+            "SweetAlertDialog"                     : "com.github.cazaea:sweet-alert-dialog:1.0.0",
+
+            //沉浸式状态栏ImmersionBar
+            "ImmersionBar"                         : "com.gyf.immersionbar:immersionbar:2.3.3",
+
+
+            //圆形imageView
+            "circleimage"                          : "de.hdodenhof:circleimageview:2.2.0",
+
+            //apache
+            "apache"                               : "org.apache.httpcomponents:httpclient:4.2.1",
+
+            //可拖拽的小红点badgeview
+            "badgeview"                            : "q.rorbin:badgeview:1.1.3",
+
+            //fastjson
+            "fastjson"                             : "com.alibaba:fastjson:1.2.57",
+
+            //BottomNavigationViewEx
+            "BottomNavigationViewEx"               : "com.github.ittianyu:BottomNavigationViewEx:2.0.4",
+
+
+            // 商城阻尼下拉刷新 Ultra Pull To Refresh
+            "Ultra-Pull-To-Refresh"                : "in.srain.cube:ultra-ptr:1.0.11",
+
+
+            //骨架屏Skeleton
+            "skeleton"                             : "com.ethanhua:skeleton:1.1.2",
+            "shimmer"                              : "io.supercharge:shimmerlayout:2.1.0",
+
+            //BugTag
+            "BugTag"                               : "com.bugtags.library:bugtags-lib:3.1.1",
+
+
+            //RxEasyHttp
+            "RxEasyHttp"                           : "com.zhouyou:rxeasyhttp:2.1.5",
+
+            //引导NewbieGuide
+            "NewbieGuide"                          : "com.github.huburt-Hu:NewbieGuide:v2.4.0",
+
+            //通过标签直接生成shape，无需再写shape.xml
+            "shape-background"                     : "com.noober.background:core:1.5.8",
+
+            //屏幕适配Autosize
+            "Autosize"                             : "me.jessyan:autosize:1.1.2",
+
+
+            //IDCardCamera
+            "IDCardCamera"                         : "com.github.wildma:IDCardCamera:1.1.0",
+
+
+
+
+
+    ]
+}
+
+

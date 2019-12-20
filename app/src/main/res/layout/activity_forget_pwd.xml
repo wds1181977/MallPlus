@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.login.ForgetPwdActivity">
+
+    <include
+        android:id="@+id/titleBar"
+        layout="@layout/layout_base_title_bar" />
+
+
+
+    <TextView
+        android:id="@+id/vip_money_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forget_pwd"
+        android:textSize="@dimen/textSize22sp"
+        android:layout_marginStart="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar" />
+
+    <TextView
+        android:id="@+id/forget_pwd_type"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_grayline_bottom"
+        android:drawableRight="@drawable/icon_arrow_right"
+        android:gravity="center_vertical"
+        android:text="@string/password_type"
+        android:textColor="@color/gray_tv" />
+
+    <EditText
+        android:id="@+id/forget_key"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_grayline_bottom"
+        android:hint="@string/keystore"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/textSize14sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15">
+
+        <EditText
+            android:id="@+id/forget_pwd_new"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_grayline_bottom"
+            android:hint="@string/new_pwd"
+            android:inputType="textPassword"
+            android:maxLength="21"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/textSize14sp" />
+
+        <CheckBox
+            android:id="@+id/cb_confirm_password_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:button="@drawable/checkbox_password_selector"
+            android:paddingRight="@dimen/dp2" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15">
+
+        <EditText
+            android:id="@+id/forget_pwd_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_grayline_bottom"
+            android:hint="@string/pwd_confirm"
+            android:inputType="textPassword"
+            android:maxLength="21"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/textSize14sp" />
+
+        <CheckBox
+            android:id="@+id/cb_confirm_password_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:button="@drawable/checkbox_password_selector"
+            android:paddingRight="@dimen/dp2" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/error_pwd"
+        android:textColor="@color/red"
+        android:textSize="@dimen/textSize14sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/forget_pwd_sub"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp45"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp30"
+        android:background="@drawable/shape_radio_btn"
+        android:text="@string/botton_complete"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize18sp" />
+
+</LinearLayout>

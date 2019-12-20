@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:roundiv="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp10"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cb_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:background="@drawable/selector_mall_shop"
+            android:button="@null" />
+
+        <com.tymall.view.CustomRoundAngleImageView
+            android:id="@+id/iv_product_picture"
+            android:layout_width="@dimen/dp75"
+            android:layout_height="@dimen/dp75"
+            android:layout_marginLeft="@dimen/dp10"
+            android:background="@mipmap/icon_shop_default"
+            android:scaleType="centerCrop"
+            roundiv:radius="@dimen/dp5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp10"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp20"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text=""
+                android:textColor="@color/notice_carde_view_text_color"
+                android:textSize="@dimen/dp14" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_dbm_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text=""
+                    android:textColor="@color/setting_sign_out_color"
+                    android:textSize="@dimen/dp13" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_less"
+                        android:layout_width="@dimen/dp30"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_less"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@mipmap/icon_less" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_commodity_num"
+                        android:layout_width="@dimen/dp40"
+                        android:layout_height="@dimen/dp25"
+                        android:background="@color/background"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="@dimen/dp12" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_add"
+                        android:layout_width="@dimen/dp30"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/dp15"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_add"
+                            android:layout_width="@dimen/dp10"
+                            android:layout_height="@dimen/dp10"
+                            android:layout_gravity="center_vertical"
+                            android:background="@mipmap/icon_add"
+                            android:padding="@dimen/dp20" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

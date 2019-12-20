@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-3.3.1.js"></script>
+
+    <!--web3js-->
+    <script src="../Plugins/web3j/web3.js"></script>
+
+    <!--web3j 相关的接口封装js库-->
+    <script src="../Public/js/web3j-api-0.0.1.js"></script>
+
+</head>
+
+<body>
+
+    <script>
+
+            var hash = '0x09ce3ed6c65c2b9224f28079189787701dbaded2469a4e2a88af43a9f0d9d5b3';
+            getTransactionReceiptByHash(hash);
+
+            // 通过HASH 获取交易详情
+            function  getTransactionReceiptByHash(hash) {
+
+                var result = getTransactionReceipt(hash);
+
+                if (!result){
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: TransError, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.getTransactionReceiptByHash(JSON.stringify(dataJson));
+                    return false;
+
+                }
+
+                // 计算确认次数
+                var height = result.blockNumber;
+                var nowHeight = getBlockNumber();
+                if (!nowHeight){
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: TransError, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.getTransactionReceiptByHash(JSON.stringify(dataJson));
+                    return false;
+
+                }
+                var confirmedNum = nowHeight - height;
+                console.log(height);
+                console.log(nowHeight);
+                console.log(confirmedNum);
+
+                var status = false;
+                if (confirmedNum>=12){
+
+                    status = true;
+
+                }
+
+                /*交互app*/
+                var dataJson = {status: status, msg: '此交易确认次数~', info: confirmedNum};
+                console.log("dataArr: " + JSON.stringify(dataJson));
+                Interactive.getTransactionReceiptByHash(JSON.stringify(dataJson));
+                return ture;
+            }
+
+            // 过滤器暂时关闭
+            /*web3.eth.filter('latest').watch(function() {
+                var currentBalance = web3.fromWei(web3.eth.getBalance(coinbase), 'ether');
+                document.getElementById("current").innerText = 'current: ' + currentBalance;
+                document.getElementById("diff").innerText = 'diff:    ' + (currentBalance - originalBalance);
+            });*/
+
+    </script>
+
+</body>
+</html>

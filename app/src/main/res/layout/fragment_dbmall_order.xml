@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.aries.ui.view.title.TitleBarView
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:background="@color/white"
+        app:title_leftTextDrawable="@drawable/icon_titlebar_back"
+        app:title_statusBarLightMode="true"
+        app:title_titleSubText="@string/my_order"
+        app:title_titleSubTextColor="@color/notice_carde_view_text_color"
+        app:title_titleSubTextFakeBold="true"
+        app:title_titleSubTextSize="@dimen/sp18" />
+
+
+    <com.tymall.view.PagerSlidingTabStrip
+        android:id="@+id/page_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp30"
+        android:background="@color/white"
+        android:textColor="@color/notice_carde_view_text_color"
+        android:textSize="@dimen/dp12"
+        app:pstsDividerColor="@android:color/transparent"
+        app:pstsIndicatorColor="@color/red_color"
+        app:pstsIndicatorHeight="@dimen/dp2"
+        app:pstsScaleZoomMax="0.0"
+        app:pstsShouldExpand="true"
+        app:pstsTextSelectedColor="@color/red_color"
+        app:pstsUnderlineHeight="0dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

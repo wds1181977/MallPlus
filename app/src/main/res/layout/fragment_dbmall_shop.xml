@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.aries.ui.view.title.TitleBarView
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@mipmap/icon_shop_background_top"
+        app:title_leftTextDrawable="@mipmap/icon_back_left_white"
+        app:title_rightText="@string/management"
+        app:title_rightTextColor="@color/white"
+        app:title_statusBarLightMode="false"
+        app:title_titleSubText="@string/shopping_cart"
+        app:title_titleSubTextColor="@color/white"
+        app:title_titleSubTextFakeBold="true"
+        app:title_titleSubTextSize="@dimen/sp18" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp100"
+            android:background="@mipmap/icon_shop_background_under"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_no_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/icon_shopping_cart" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="@string/your_shopping_cart_is_empty"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dp14" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rl_recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <CheckBox
+            android:id="@+id/checkbox_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp15"
+            android:button="@drawable/selector_mall_shop"
+            android:checked="false"
+            android:padding="@dimen/dp6"
+            android:text="@string/select_all" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_all_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/he_ji"
+                android:textColor="@color/notice_carde_view_text_color"
+                android:textSize="@dimen/dp16" />
+
+            <TextView
+                android:id="@+id/tv_determine"
+                android:layout_width="@dimen/dp110"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:background="@drawable/shape_radio_btn_mall_fang"
+                android:gravity="center"
+                android:text="@string/jie_suan"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp16" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

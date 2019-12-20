@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.IntroduceActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/guide_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/guide_ll_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginBottom="40dp"
+        android:layout_above="@+id/guide_ib_start"
+        >
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/guide_ib_start"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_radio_btn"
+        android:textColor="@color/white"
+        android:visibility="invisible"
+        android:textAllCaps="false"
+        android:text="@string/experience_now"
+        android:layout_above="@+id/content_layout"
+        android:layout_marginBottom="@dimen/dp5"
+        />
+
+    <LinearLayout
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp45"
+        >
+
+        <TextView
+            android:id="@+id/content_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_introduce_title_one"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:textColor="@color/notice_carde_view_text_color"/>
+
+
+        <TextView
+            android:id="@+id/content_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_introduce_title_content_one"
+            android:textStyle="bold"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp20"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/guide_ib_next"
+        android:layout_width="65dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@mipmap/icon_in_bg"
+        android:gravity="center"
+        android:text="@string/jump_over"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_14" />
+
+</RelativeLayout>

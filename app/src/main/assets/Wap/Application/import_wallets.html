@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--[if (gte IE 9)|!(IE)]>&lt;!&ndash;dash;&gt;-->
+    <script src="../Public/js/jquery-3.3.1.js"></script>
+
+    <!--钱包生成地址、密钥-->
+    <script src="../Plugins/ethersjs/ethers-v3.min.js"></script>
+
+    <!--引入js 加密解密文件-->
+    <script src="../Plugins/CryptoJS/crypto-js.js"></script>
+
+    <!--引入md5js 加密文件-->
+    <script src="../Plugins/md5/md5.js"></script>
+
+    <!--引入crypto-api-0.0.1.js 文件-->
+    <script src="../Public/js/crypto-api-0.0.1.js"></script>
+
+</head>
+
+<body>
+
+<script>
+
+        <!--/* 根据keystore和自己设定的密码 推出地址*/-->
+        <!--var password = "123456abc";-->
+        <!--var keystore = {-->
+            <!--"address": "e111b283fe41a35089cf65a357d0665b99e6cad6",-->
+            <!--"crypto": {-->
+                <!--"cipher": "aes-128-ctr",-->
+                <!--"ciphertext": "46b422277baecccc65737d8acea67426f0a6c08d56b837a23e6d88c008bcc1fd",-->
+                <!--"cipherparams": {"iv": "571192b55cbe8e0432f38099fa68d13b"},-->
+                <!--"kdf": "scrypt",-->
+                <!--"kdfparams": {-->
+                    <!--"dklen": 32,-->
+                    <!--"n": 262144,-->
+                    <!--"p": 1,-->
+                    <!--"r": 8,-->
+                    <!--"salt": "a754604f7bbf9f97bfbb3cdf46b7be322d8972e56d345e2f71d562a132920f66"-->
+                <!--},-->
+                <!--"mac": "ad1e1d7bb98b4cda2d4216492dcc4acf385d21b07902ab0d54d8539abd71ef41"-->
+            <!--},-->
+            <!--"id": "7f693d4f-9b79-4c8a-9b8e-58c0b2659556",-->
+            <!--"version": 3-->
+        <!--};-->
+        // import_keystore(password, keystore);
+
+        /**
+         * 导入钱包by keystore
+         * password  是密码
+         * keystore  是加密私钥
+         * */
+        function import_keystore(password, keystore) {
+            var data = eval("("+keystore+")");
+
+            console.log("Address: " + keystore);
+            var json = JSON.stringify(data);
+            ethers.Wallet.fromEncryptedWallet(json, password).then(function (wallets) {
+                console.log("Address: " + JSON.stringify(wallets));
+
+                // 私钥
+                var privateKey = Encrypt(wallets.privateKey, password).toString();
+                console.log("privateKey: " + privateKey);
+
+                // 地址
+                var address = wallets.address;
+                console.log("address: " + address);
+
+                /*交互app*/
+                var dataJson = {address: address, privateKey: privateKey, mnemonic:""};
+                console.log("dataArr: " + JSON.stringify(dataJson));
+                Interactive.importWallet(JSON.stringify(dataJson));
+
+            });
+        }
+
+        <!--var privateKey = "0x5b28912bc1bdb03d5910c3a92e723e52d140c42bf894dcf62f21e0865edb2bde";-->
+        // import_privateKey(password, privateKey);
+        /**
+         * 导入钱包by privateKey
+         * password  是密码
+         * keystore  是未加密私钥
+         * */
+        function import_privateKey(password, privateKey) {
+            // 引入核心模块
+            var Wallet = ethers.Wallet;
+
+
+            // 初始化私钥,并判断地址是否一样
+            var wallets = new Wallet(privateKey);
+            console.log("wallets: " + JSON.stringify(wallets));
+
+            // 私钥
+            var privateKey_enc = Encrypt(privateKey, password).toString();
+            console.log("privateKey_enc: " + privateKey_enc);
+
+            // 地址
+            var address = wallets.address;
+            console.log("address: " + address);
+
+            /*交互app*/
+            var dataJson = {address: address, privateKey: privateKey_enc, mnemonic:""};
+            console.log("dataArr: " + JSON.stringify(dataJson));
+            Interactive.importWallet(JSON.stringify(dataJson));
+        }
+
+        <!--var mnemonic = "bubble invite trophy cancel damp motor stove pull success usual illegal kick";-->
+        <!--import_mnemonic(password, mnemonic);-->
+        /**
+         * 导入钱包by mnemonic
+         * password  是密码
+         * keystore  是未加密助记词
+         * */
+        function import_mnemonic(password, mnemonic) {
+                console.log("wallets: " + mnemonic);
+            // 引入核心模块
+            var Wallet = ethers.Wallet;
+
+            // 初始化助记词,并判断地址是否一样
+            /* 根据助记词生成地址 */
+            var wallets = new Wallet.fromMnemonic(mnemonic);
+            console.log("wallets: " + JSON.stringify(wallets));
+
+            // 私钥
+            var privateKey_enc = Encrypt(wallets.privateKey, password).toString();
+            console.log("privateKey: " + privateKey_enc);
+
+            // 地址
+            var address = wallets.address;
+            console.log("address: " + address);
+
+            // 助记词
+            var mnemonic_enc = Encrypt(mnemonic, password).toString();
+            console.log("privateKey: " + mnemonic_enc);
+
+            /*交互app*/
+            var dataJson = {address: address, privateKey: privateKey_enc, mnemonic:mnemonic_enc};
+            console.log("dataArr: " + JSON.stringify(dataJson));
+            Interactive.importWallet(JSON.stringify(dataJson));
+        }
+
+</script>
+
+</body>
+</html>

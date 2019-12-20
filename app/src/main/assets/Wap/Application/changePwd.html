@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-3.3.1.js"></script>
+
+    <!--钱包生成地址、密钥-->
+    <script src="../Plugins/ethersjs/ethers-v3.min.js"></script>
+
+    <!--引入js 加密解密文件-->
+    <script src="../Plugins/CryptoJS/crypto-js.js"></script>
+
+    <!--引入md5js 加密文件-->
+    <script src="../Plugins/md5/md5.js"></script>
+
+    <!--引入crypto-api-0.0.1.js 文件-->
+    <script src="../Public/js/crypto-api-0.0.1.js"></script>
+
+</head>
+
+<body>
+
+<!--修改密码-->
+<script>
+        // 定义的全局变量
+        var TransError='';
+
+        // 通过加密私钥导出私钥privateKey
+        function alter_password(address, password, new_password, privateKey_enc, mnemonic_enc) {
+            console.log("change_password: "+address+","+password+","+privateKey_enc+","+mnemonic_enc);
+            // 判断参数
+                if (!address || !password || !new_password || !privateKey_enc) {
+                    TransError = '参数有误~';
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: TransError, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+                }
+                // 引入核心模块
+                var Wallet = ethers.Wallet;
+
+                // 解密私钥
+                var privateKey = Decrypt(privateKey_enc, password);
+                console.log('privateKey: ' + privateKey);
+                if (!privateKey) {
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: errorMsg, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+
+                }
+
+                // 初始化私钥,并判断地址是否一样
+                var wallet = new Wallet(privateKey);
+                console.log('Address: ' + wallet.address.toLocaleLowerCase());
+                console.log('AddressLOW: ' + address.toLocaleLowerCase());
+                if (wallet.address.toLocaleLowerCase() != address.toLocaleLowerCase()){
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: '密码有误Err1001~', info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+
+                }
+
+                // 用新密吗重新加密
+                var privateKey_new = Encrypt(privateKey, new_password).toString();
+                console.log("privateKey_new: " + privateKey_new);
+                if (privateKey_new == false){
+                    console.log("ErrorMsg-privateKey: " + errorMsg);
+                }
+
+                // 解密助记词
+                var mnemonic_new = '';
+                if (mnemonic_enc){
+
+                    var mnemonic = Decrypt(mnemonic_enc, password);
+                    console.log('Mnemonic: ' + mnemonic);
+                    if (!mnemonic){
+
+                        /*交互app*/
+                        var dataJson = {status: false, msg: errorMsg, info: 0};
+                        console.log("dataArr: " + JSON.stringify(dataJson));
+                        Interactive.transFerEth(JSON.stringify(dataJson));
+                        return false;
+
+                    }
+
+                    // 初始化助记词,并判断地址是否一样
+                    /* 根据助记词生成地址 */
+                    var mnemonicObj = new Wallet.fromMnemonic(mnemonic);
+                    console.log('Address: ' + mnemonicObj.address.toLocaleLowerCase());
+                    console.log('AddressLOW: ' + address.toLocaleLowerCase());
+                    if (mnemonicObj.address.toLocaleLowerCase() != address.toLocaleLowerCase()){
+
+                        /*交互app*/
+                        var dataJson = {status: false, msg: '密码有误Err1002~', info: 0};
+                        console.log("dataArr: " + JSON.stringify(dataJson));
+                        Interactive.transFerEth(JSON.stringify(dataJson));
+                        return false;
+
+                    }
+
+                    // 用新密吗重新加密
+                    mnemonic_new = Encrypt(mnemonic, new_password).toString();
+                    console.log("mnemonic_new: " + mnemonic_new);
+                    if (mnemonic_new == false){
+                        console.log("ErrorMsg-mnemonic: " + errorMsg);
+                    }
+
+                }
+
+                /*交互app*/
+                var dataJson = {status: true, msg: '密码修改成功',address:address,privateKey:privateKey_new,mnemonic:mnemonic_new};
+                console.log("dataArr: " + JSON.stringify(dataJson));
+
+                Interactive.transFerEth(JSON.stringify(dataJson));
+        }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/translate"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/root_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:background="@drawable/shape_radio_arround_white_10"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialog_password_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal"
+            android:text="@string/string_coin_exchange_dialog_title"
+            android:textColor="@color/notice_carde_view_text_color"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:id="@+id/pay_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp24"
+            android:layout_marginRight="@dimen/dp40"
+            android:layout_marginBottom="@dimen/dp16">
+
+
+            <TextView
+                android:id="@+id/tx_amount_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_coin_exchange_dialog_amount"
+                android:textColor="@color/color_new_detail_key_text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tx_amount_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:textColor="@color/color_new_detail_value_text"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tx_gas_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tx_amount_key"
+                android:layout_marginTop="16dp"
+                android:text="@string/string_coin_exchange_dialog_gas"
+                android:textColor="@color/color_new_detail_key_text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tx_gas_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tx_amount_value"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="11dp"
+                android:text=""
+                android:textColor="@color/color_new_detail_value_text"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/tx_vip_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tx_gas_key"
+                android:layout_marginTop="16dp"
+                android:text="@string/string_coin_exchange_dialog_vip"
+                android:textColor="@color/color_new_detail_key_text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tx_vip_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tx_gas_value"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:textColor="@color/color_new_detail_key_text"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp40"
+            android:layout_marginRight="@dimen/dp30">
+
+
+            <TextView
+                android:id="@+id/tx_cf_key"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/string_coin_exchange_dialog_calculation_formula"
+                android:textColor="@color/color_new_detail_key_text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tx_cf_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text=""
+                android:textColor="@color/color_new_detail_key_text"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0.7dp"
+            android:background="@drawable/shape_radio_arround_grap_10"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="25dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/color_new_detail_line" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:text="@string/string_coin_exchange_dialog_gas_rules"
+                    android:textColor="@color/color_new_detail_rules_title"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold" />
+
+
+                <View
+                    android:layout_width="25dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/color_new_detail_line" />
+
+
+            </LinearLayout>
+
+            <com.tymall.view.SuperSpringScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp12"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="@dimen/dp35"
+                android:fillViewport="true"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/tx_reules_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp50"
+                    android:layout_marginRight="@dimen/dp50"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/rule_list_layout"
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/rule_value_layout"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="@dimen/dp8">
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </com.tymall.view.SuperSpringScrollView>
+
+
+            <Button
+                android:id="@+id/dialog_password_submit"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="81dp"
+                android:layout_marginRight="81dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/shape_radio_btn"
+                android:text="@string/shut_down"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize16sp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

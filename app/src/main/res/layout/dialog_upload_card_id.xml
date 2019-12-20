@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/translate">
+
+    <RelativeLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_radio_arround_white_10"
+        android:layout_marginLeft="@dimen/dp40"
+        android:layout_marginRight="@dimen/dp40">
+
+
+        <ImageView
+            android:id="@+id/img_page1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp25"
+            android:src="@mipmap/icon_shouchishenfenzheng"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_page1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp12"
+            android:text="@string/string_verified_refer_to_this_picture"
+            android:textColor="@color/notice_carde_view_text_color"
+            android:textSize="16sp"
+            android:layout_below="@+id/img_page1"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_page2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp2"
+            android:text="@string/string_verified_photographing_a_hand_held_id"
+            android:textColor="@color/notice_carde_view_text_color"
+            android:textSize="16sp"
+            android:layout_below="@+id/tv_page1"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <Button
+            android:id="@+id/dialog_submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp35"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginRight="@dimen/dp30"
+            android:layout_marginBottom="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp28"
+            android:background="@drawable/shape_yellow_radio_btn"
+            android:text="@string/string_ok"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize16sp"
+            android:layout_below="@+id/tv_page2" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

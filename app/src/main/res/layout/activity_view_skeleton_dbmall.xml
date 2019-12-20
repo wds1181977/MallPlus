@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <View
+        android:id="@+id/img_banner"
+        android:layout_width="0dp"
+        android:layout_height="225dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@color/light_transparent"
+        android:id="@+id/img_page1"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/img_page2"
+        app:layout_constraintTop_toBottomOf="@+id/img_banner" />
+
+    <View
+        android:id="@+id/tv_page1"
+        android:layout_width="40dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page1"
+        app:layout_constraintRight_toRightOf="@+id/img_page1"
+        app:layout_constraintTop_toBottomOf="@+id/img_page1" />
+
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@color/light_transparent"
+        android:id="@+id/img_page2"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/img_page1"
+        app:layout_constraintRight_toLeftOf="@+id/img_page3"
+        app:layout_constraintTop_toBottomOf="@+id/img_banner" />
+
+    <View
+        android:id="@+id/tv_page2"
+        android:layout_width="40dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="2dp"
+
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page2"
+        app:layout_constraintRight_toRightOf="@+id/img_page2"
+        app:layout_constraintTop_toBottomOf="@+id/img_page2" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@color/light_transparent"
+        android:id="@+id/img_page3"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/img_page2"
+        app:layout_constraintRight_toLeftOf="@+id/img_page4"
+        app:layout_constraintTop_toBottomOf="@+id/img_banner" />
+
+    <View
+        android:id="@+id/tv_page3"
+        android:layout_width="40dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page3"
+        app:layout_constraintRight_toRightOf="@+id/img_page3"
+        app:layout_constraintTop_toBottomOf="@+id/img_page3" />
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@color/light_transparent"
+        android:id="@+id/img_page4"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/dp10"
+
+        app:layout_constraintLeft_toRightOf="@+id/img_page3"
+        app:layout_constraintRight_toLeftOf="@+id/img_page5"
+        app:layout_constraintTop_toBottomOf="@+id/img_banner" />
+
+    <View
+        android:id="@+id/tv_page4"
+        android:layout_width="40dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page4"
+        app:layout_constraintRight_toRightOf="@+id/img_page4"
+        app:layout_constraintTop_toBottomOf="@+id/img_page4" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@color/light_transparent"
+        android:id="@+id/img_page5"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/dp10"
+        app:layout_constraintLeft_toRightOf="@+id/img_page4"
+        app:layout_constraintRight_toRightOf="@+id/img_banner"
+        app:layout_constraintTop_toBottomOf="@+id/img_banner" />
+
+    <View
+        android:id="@+id/tv_page5"
+        android:layout_width="40dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page5"
+        app:layout_constraintRight_toRightOf="@+id/img_page5"
+        app:layout_constraintTop_toBottomOf="@+id/img_page5" />
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@color/light_transparent"
+        android:id="@+id/img_page6"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/img_banner"
+        app:layout_constraintRight_toLeftOf="@+id/img_page7"
+        app:layout_constraintTop_toBottomOf="@+id/tv_page1" />
+
+
+    <View
+        android:id="@+id/tv_page6"
+        android:layout_width="40dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page6"
+        app:layout_constraintRight_toRightOf="@+id/img_page6"
+        app:layout_constraintTop_toBottomOf="@+id/img_page6" />
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@color/light_transparent"
+        android:id="@+id/img_page7"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/dp10"
+        app:layout_constraintLeft_toRightOf="@+id/img_page6"
+        app:layout_constraintRight_toLeftOf="@+id/img_page8"
+        app:layout_constraintTop_toBottomOf="@+id/tv_page1" />
+
+    <View
+        android:id="@+id/tv_page7"
+        android:layout_width="40dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page7"
+        app:layout_constraintRight_toRightOf="@+id/img_page7"
+        app:layout_constraintTop_toBottomOf="@+id/img_page7" />
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@color/light_transparent"
+        android:id="@+id/img_page8"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page7"
+        app:layout_constraintRight_toLeftOf="@+id/img_page9"
+        app:layout_constraintTop_toBottomOf="@+id/tv_page1" />
+
+    <View
+        android:id="@+id/tv_page8"
+        android:layout_width="40dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page8"
+        app:layout_constraintRight_toRightOf="@+id/img_page8"
+        app:layout_constraintTop_toBottomOf="@+id/img_page8" />
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@color/light_transparent"
+        android:id="@+id/img_page9"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/dp10"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page8"
+        app:layout_constraintRight_toLeftOf="@+id/img_page10"
+        app:layout_constraintTop_toBottomOf="@+id/tv_page1" />
+
+    <View
+        android:id="@+id/tv_page9"
+        android:layout_width="40dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page9"
+        app:layout_constraintRight_toRightOf="@+id/img_page9"
+        app:layout_constraintTop_toBottomOf="@+id/img_page9" />
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@color/light_transparent"
+        android:id="@+id/img_page10"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/dp10"
+        app:layout_constraintLeft_toRightOf="@+id/img_page9"
+        app:layout_constraintRight_toRightOf="@+id/img_banner"
+        app:layout_constraintTop_toBottomOf="@+id/tv_page5" />
+
+    <View
+        android:id="@+id/tv_page10"
+        android:layout_width="40dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="@+id/img_page10"
+        app:layout_constraintRight_toRightOf="@+id/img_page10"
+        app:layout_constraintTop_toBottomOf="@+id/img_page10" />
+
+    <View
+        android:id="@+id/page1"
+        android:layout_width="60dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="@id/img_page1"
+        app:layout_constraintRight_toLeftOf="@+id/page2"
+        app:layout_constraintTop_toBottomOf="@id/tv_page6" />
+
+
+
+
+
+    <View
+        android:id="@+id/page2"
+        android:layout_width="60dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginBottom="10dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toRightOf="@+id/page1"
+        app:layout_constraintRight_toRightOf="@+id/page3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_page6" />
+
+
+
+
+    <View
+        android:id="@+id/page3"
+        android:layout_width="60dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginBottom="10dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toRightOf="@+id/page2"
+        app:layout_constraintRight_toRightOf="@+id/page4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_page6" />
+
+
+
+    <View
+        android:id="@+id/page4"
+        android:layout_width="60dp"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_height="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toRightOf="@+id/page3"
+        app:layout_constraintRight_toRightOf="@+id/img_page5"
+        app:layout_constraintTop_toBottomOf="@+id/tv_page6" />
+
+
+    <View
+        android:id="@+id/good_image"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/page1" />
+
+
+    <View
+        android:id="@+id/avatar"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/good_image" />
+
+
+    <View
+        android:id="@+id/tv_xl"
+        android:layout_width="41dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@color/light_transparent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/good_image" />
+
+    <View
+        android:id="@+id/tv_title"
+        android:layout_width="90dp"
+        android:layout_height="21dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toRightOf="@+id/avatar"
+        app:layout_constraintTop_toTopOf="@id/avatar" />
+
+
+
+
+    <View
+        android:id="@+id/tv_price"
+        android:layout_width="63dp"
+        android:layout_height="17dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toTopOf="@id/tv_content_dbm"
+        app:layout_constraintLeft_toRightOf="@+id/avatar" />
+
+    <View
+        android:id="@+id/tv_content_dbm"
+        android:layout_width="140dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toTopOf="@id/tv_content"
+        app:layout_constraintLeft_toRightOf="@+id/avatar" />
+
+    <View
+        android:id="@+id/tv_content"
+        android:layout_width="192dp"
+        android:layout_height="17dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"
+        app:layout_constraintLeft_toRightOf="@+id/avatar" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorLine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+    <View
+        android:id="@+id/avatar1"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+
+    <View
+        android:id="@+id/tv_xl2"
+        android:layout_width="41dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@color/light_transparent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    <View
+        android:id="@+id/tv_title1"
+        android:layout_width="90dp"
+        android:layout_height="21dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toRightOf="@+id/avatar1"
+        app:layout_constraintTop_toTopOf="@id/avatar1" />
+
+    <View
+        android:id="@+id/tv_price1"
+        android:layout_width="63dp"
+        android:layout_height="17dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toTopOf="@id/tv_content_dbm1"
+        app:layout_constraintLeft_toRightOf="@+id/avatar1" />
+
+    <View
+        android:id="@+id/tv_content_dbm1"
+        android:layout_width="140dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toTopOf="@id/tv_content1"
+        app:layout_constraintLeft_toRightOf="@+id/avatar1" />
+
+    <View
+        android:id="@+id/tv_content1"
+        android:layout_width="192dp"
+        android:layout_height="12dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/avatar1"
+        app:layout_constraintLeft_toRightOf="@+id/avatar1" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorLine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_content1" />
+
+    <View
+        android:id="@+id/avatar2"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+    <View
+        android:id="@+id/tv_xl3"
+        android:layout_width="41dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@color/light_transparent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+    <View
+        android:id="@+id/tv_title2"
+        android:layout_width="80dp"
+        android:layout_height="16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintLeft_toRightOf="@+id/avatar2"
+        app:layout_constraintTop_toTopOf="@id/avatar2" />
+
+    <View
+        android:id="@+id/tv_price2"
+        android:layout_width="62dp"
+        android:layout_height="17dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toTopOf="@id/tv_content_dbm2"
+        app:layout_constraintLeft_toRightOf="@+id/avatar2" />
+
+    <View
+        android:id="@+id/tv_content_dbm2"
+        android:layout_width="140dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toTopOf="@id/tv_content2"
+        app:layout_constraintLeft_toRightOf="@+id/avatar2" />
+
+    <View
+        android:id="@+id/tv_content2"
+        android:layout_width="192dp"
+        android:layout_height="17dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/light_transparent"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@id/avatar2"
+        app:layout_constraintLeft_toRightOf="@+id/avatar2" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorLine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_content2" />
+
+
+</android.support.constraint.ConstraintLayout>

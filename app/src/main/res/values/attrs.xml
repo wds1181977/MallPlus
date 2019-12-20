@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--圆形头像-->
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="swipelistviewstyle">
+        <attr name="right_width" format="dimension"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="MarqueeViewStyle">
+        <attr name="mvInterval" format="integer|reference"/>
+        <attr name="mvAnimDuration" format="integer|reference"/>
+        <attr name="mvTextSize" format="dimension|reference"/>
+        <attr name="mvTextColor" format="color|reference"/>
+        <attr name="mvSingleLine" format="boolean"/>
+        <attr name="mvGravity">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <attr name="mvDirection">
+            <enum name="bottom_to_top" value="0"/>
+            <enum name="top_to_bottom" value="1"/>
+            <enum name="right_to_left" value="2"/>
+            <enum name="left_to_right" value="3"/>
+        </attr>
+    </declare-styleable>
+
+
+
+    <declare-styleable name="XTabLayout">
+        <attr name="xTabIndicatorHeight" format="dimension"/>
+        <attr name="xTabIndicatorWidth" format="dimension"/>
+        <attr name="xTabIndicatorColor" format="color"/>
+        <attr name="xTabPadding" format="dimension"/>
+        <attr name="xTabPaddingStart" format="dimension"/>
+        <attr name="xTabPaddingTop" format="dimension"/>
+        <attr name="xTabPaddingEnd" format="dimension"/>
+        <attr name="xTabPaddingBottom" format="dimension"/>
+        <attr name="xTabTextAppearance" format="reference"/>
+        <attr name="xTabTextColor" format="color"/>
+        <attr name="xTabSelectedTextColor" format="color"/>
+        <attr name="xTabMinWidth" format="dimension"/>
+        <attr name="xTabMaxWidth" format="dimension"/>
+        <attr name="xTabBackgroundColor" format="reference|color"/>
+        <attr name="xTabSelectedBackgroundColor" format="reference|color"/>
+        <attr name="xTabContentStart" format="dimension"/>
+        <attr name="xTabMode">
+            <enum name="scrollable" value="0x00000000" />
+            <enum name="fixed" value="0x00000001" />
+        </attr>
+        <attr name="xTabGravity" format="integer"/>
+
+        <attr name="xTabTextSize" format="dimension"/>
+        <attr name="xTabTextBold" format="boolean"/>
+        <attr name="xTabSelectedTextSize" format="dimension"/>
+        <attr name="xTabTextSelectedBold" format="boolean"/>
+        <attr name="xTabDisplayNum" format="integer"/>
+        <attr name="xTabTextAllCaps" format="boolean"/>
+
+
+        <attr name="xTabDividerHeight" format="dimension"/>
+        <attr name="xTabDividerWidth" format="dimension"/>
+        <attr name="xTabDividerWidthWidthText" format="boolean"/>
+        <attr name="xTabDividerColor" format="color"/>
+        <attr name="xTabDividerGravity">
+            <enum name="top" value="0x00000000" />
+            <enum name="center" value="0x00000001" />
+            <enum name="bottom" value="0x00000002" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="NoticeView">
+        <!-- 图标 -->
+        <attr name="nvIcon" format="reference"/>
+        <!-- 图标与内容的间隙 -->
+        <attr name="nvIconPadding" format="dimension"/>
+        <!-- 图标颜色 -->
+        <attr name="nvIconTint" format="color"/>
+
+        <!-- 文本尺寸 -->
+        <attr name="nvTextSize" format="dimension"/>
+        <!-- 文本颜色 -->
+        <attr name="nvTextColor" format="color"/>
+        <!-- 文本最大行数 -->
+        <attr name="nvTextMaxLines" format="integer"/>
+        <!-- 文本对齐方式 -->
+        <attr name="nvTextGravity" format="integer">
+            <enum name="left" value="3"/>
+            <enum name="center" value="17"/>
+            <enum name="right" value="5"/>
+        </attr>
+
+        <!-- 切换动画间隔时间，毫秒 -->
+        <attr name="nvInterval" format="integer"/>
+        <!-- 切换动画持续时间，毫秒 -->
+        <attr name="nvDuration" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+        <attr name="pstsDividerWidthWrap" format="boolean" />
+        <attr name="pstsDividerPaddingTopBottom" format="dimension" />
+        <attr name="pstsTextSelectedColor" format="color" />
+        <!--缩放的最大值,0.3表示放大后最大是原来的0.3倍,默认未0.3-->
+        <attr name="pstsScaleZoomMax" format="float" />
+        <attr name="pstsSmoothScrollWhenClickTab" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="Custom_Round_Image_View">
+        <attr name="radius" format="dimension" />
+        <attr name="left_top_radius" format="dimension" />
+        <attr name="right_top_radius" format="dimension" />
+        <attr name="right_bottom_radius" format="dimension" />
+        <attr name="left_bottom_radius" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="hprogress">
+        <attr name="progress" format="integer"/>
+        <attr name="max" format="integer"/>
+        <attr name="progressHeight" format="integer"/>
+        <attr name="progressColor" format="color"/>
+    </declare-styleable>
+</resources>

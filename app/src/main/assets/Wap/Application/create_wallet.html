@@ -1,0 +1,59 @@
+<!doctype html>
+<html class="no-js">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-3.3.1.js"></script>
+
+    <!--引入js 加密解密文件-->
+    <script src="../Plugins/CryptoJS/crypto-js.js"></script>
+
+    <!--引入md5js 加密文件-->
+    <script src="../Plugins/md5/md5.js"></script>
+
+    <!--引入crypto-api-0.0.1.js 文件-->
+    <script src="../Public/js/crypto-api-0.0.1.js"></script>
+
+
+</head>
+<body>
+
+<!--钱包生成地址、密钥-->
+<script src="../Plugins/ethersjs/ethers-v3.min.js"></script>
+<script>
+
+    function create_wallets(password){
+        console.log("password: " + password);
+        /*生成钱包信息*/
+        var wallet = ethers.Wallet.createRandom();
+        console.log("createRandom: " + JSON.stringify(wallet));
+        var address = wallet.address;
+        var privateKey = Encrypt(wallet.privateKey, password).toString();
+        console.log("privateKey: " + privateKey);
+        if (privateKey == false){
+            console.log("ErrorMsg-privateKey: " + errorMsg);
+        }
+        var mnemonic = Encrypt(wallet.mnemonic, password).toString();
+        console.log("mnemonic: " + mnemonic);
+        if (mnemonic == false){
+            console.log("ErrorMsg-mnemonic: " + errorMsg);
+        }
+
+        /*console.log("mnemonic111111: " + typeof (Decrypt(mnemonic, '123')));
+        console.log("ErrorMsg-mnemonic1111: " + errorMsg);*/
+
+        /*交互app*/
+        var dataJson = {address:address,privateKey:privateKey,mnemonic:mnemonic};
+        console.log("dataArr: " + JSON.stringify(dataJson));
+
+        Interactive.creatWallet(JSON.stringify(dataJson));
+    }
+
+
+</script>
+
+</body>
+</html>

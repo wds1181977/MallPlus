@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.aries.ui.view.title.TitleBarView
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@mipmap/icon_shop_background_top"
+        app:title_leftTextDrawable="@mipmap/icon_back_left_white"
+        app:title_rightText="@string/cashback_instructions"
+        app:title_rightTextColor="@color/white"
+        app:title_statusBarLightMode="true"
+        app:title_titleSubText="@string/my_cash_back"
+        app:title_titleSubTextColor="@color/white"
+        app:title_titleSubTextFakeBold="true"
+        app:title_titleSubTextSize="@dimen/sp18" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smart_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_waiting_for_dbm"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:layout_marginLeft="@dimen/dp15"
+                android:gravity="center_vertical"
+                android:text="@string/to_return_the_dbm"
+                android:textColor="@color/color_box_bg_title_color"
+                android:textSize="@dimen/dp16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp0.5"
+                android:background="@color/line_gray_shallow" />
+
+            <TextView
+                android:id="@+id/tv_cash_back_dbm"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:layout_marginLeft="@dimen/dp15"
+                android:gravity="center_vertical"
+                android:text="@string/dbn_has_been_returned"
+                android:textColor="@color/color_box_bg_title_color"
+                android:textSize="@dimen/dp16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp0.5"
+                android:background="@color/line_gray_shallow" />
+
+            <TextView
+                android:id="@+id/tv_cash_back_integral"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:layout_marginLeft="@dimen/dp15"
+                android:gravity="center_vertical"
+                android:text="@string/cash_back_points"
+                android:textColor="@color/color_box_bg_title_color"
+                android:textSize="@dimen/dp16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp0.5"
+                android:background="@color/line_gray_shallow" />
+
+            <RelativeLayout
+                android:id="@+id/rl_point_balance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50">
+
+                <TextView
+                    android:id="@+id/tv_point_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:text="@string/point_balance"
+                    android:textColor="@color/color_box_bg_title_color"
+                    android:textSize="@dimen/dp16" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:background="@mipmap/icon_right_black" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_today_link_back"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50">
+
+                <TextView
+                    android:id="@+id/tv_today_link_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:text="@string/today_is_link_back"
+                    android:textColor="@color/color_box_bg_title_color"
+                    android:textSize="@dimen/dp16" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:background="@mipmap/icon_right_black" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp10"
+                android:background="@color/background" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginLeft="@dimen/dp15"
+                android:gravity="center_vertical"
+                android:text="@string/cash_back_record"
+                android:textColor="@color/color_box_bg_title_color"
+                android:textSize="@dimen/dp15"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/ll_no_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp50"
+                    android:background="@mipmap/icon_di_qiu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_data"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp14" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rl_recycleview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none" />
+
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp10"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

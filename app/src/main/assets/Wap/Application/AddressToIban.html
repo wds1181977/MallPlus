@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-3.3.1.js"></script>
+
+    <!--web3js-->
+    <script src="../Plugins/web3j/web3.js"></script>
+
+    <!--web3j 相关的接口封装js库-->
+    <script src="../Public/js/web3j-api-0.0.1.js"></script>
+
+</head>
+
+<body>
+
+<script>
+
+    // 地址转换成iban
+    //address_to_iban('0xe111b283fe41a35089cf65a357d0665b99e6cad6');
+
+    // iban转换成地址
+    //iban_to_address('XE53QAGLJ9YWKLKGP7NA3W3YQETDLAOF2L2');
+
+    // 地址转换成iban
+    function  address_to_iban(address) {
+
+        var Obj = web3.eth.iban.fromAddress(address);
+        if(!checkIban(Obj._iban)){
+            Obj._iban = address;
+        }
+
+        /*交互app*/
+        var dataJson = {address:address,Iban:Obj._iban};
+        console.log("dataArr: " + JSON.stringify(dataJson));
+
+        Interactive.addressToIban(JSON.stringify(dataJson));
+
+    }
+
+    // iban转换成地址
+    function  iban_to_address(iban) {
+
+        if (checkIban(iban)){
+            var Obj = new web3.eth.iban(iban);
+            var address = '0x'+Obj.address();
+        }else {
+            var address = iban;
+        }
+
+        /**交互app**/
+        var dataJson = {Iban:iban,Address:address};
+        console.log("dataArr: " + JSON.stringify(dataJson));
+
+        Interactive.ibanToAddress(JSON.stringify(dataJson));
+    }
+
+    // 验证是否为地址
+    function checkAddress(address) {
+        if(false == web3.isAddress(address)){
+            return false;
+        }
+
+        return true;
+    }
+
+    // 验证时候为iban
+    function checkIban(iban) {
+        if(false == web3.eth.iban.isValid(iban)){
+            return false;
+        }
+
+        return true;
+    }
+
+</script>
+
+</body>
+</html>

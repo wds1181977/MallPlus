@@ -1,0 +1,3 @@
+include ':app', ':library-zxing', ':library-update-app', ':library-shop-banner', ':takephoto_library'
+
+rootProject.name='TYMall'

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.aries.ui.view.title.TitleBarView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/titleBar"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/white"
+    app:title_actionTextColor="@color/setting_titlebar_center_text_color"
+    app:title_dividerBackground="@null"
+    app:title_dividerHeight="@dimen/dp_line_size"
+    app:title_leftTextColor="@color/setting_titlebar_center_text_color"
+    app:title_leftTextDrawable="@drawable/icon_titlebar_back"
+    app:title_rightTextColor="@color/setting_titlebar_center_text_color"
+    app:title_titleMainText="@string/app_name"
+    app:title_titleMainTextColor="@color/setting_titlebar_center_text_color"
+    app:title_statusBarLightMode="true"
+    app:title_titleSubTextSize="@dimen/sp18"
+    app:title_titleSubTextFakeBold="true"
+    app:title_titleSubTextColor="@color/setting_titlebar_center_text_color"/>
+
+
+

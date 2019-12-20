@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_dbmall"
+        android:icon="@drawable/dbmall_home"
+        android:title="@string/string_dbmall_novigation_dbmall" />
+
+    <item
+        android:id="@+id/tab_shop"
+        android:icon="@drawable/dbmall_shop"
+        android:title="@string/string_dbmall_novigation_shopping_cart" />
+
+    <item
+        android:id="@+id/tab_order"
+        android:icon="@drawable/dbmall_order"
+        android:title="@string/string_dbmall_novigation_order" />
+
+
+    <item
+        android:id="@+id/tab_my_cash"
+        android:icon="@drawable/dbmall_my_cash"
+        android:title="@string/string_dbmall_novigation_my_cash_back" />
+
+</menu>

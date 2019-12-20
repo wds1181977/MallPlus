@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-3.3.1.js"></script>
+
+    <!--web3js-->
+    <script src="../Plugins/web3j/web3.js"></script>
+
+    <!--web3j 相关的接口封装js库-->
+    <script src="../Public/js/web3j-api-0.0.1.js"></script>
+
+    <!--钱包生成地址、密钥-->
+    <script src="../Plugins/ethersjs/ethers-v3.min.js"></script>
+
+    <!--引入js 加密解密文件-->
+    <script src="../Plugins/CryptoJS/crypto-js.js"></script>
+
+    <!--引入md5js 加密文件-->
+    <script src="../Plugins/md5/md5.js"></script>
+
+    <!--引入crypto-api-0.0.1.js 文件-->
+    <script src="../Public/js/crypto-api-0.0.1.js"></script>
+
+</head>
+
+<body>
+
+<script>
+        // 定义的全局变量
+        var TransError='';
+
+            // 以太坊转账
+            // from  转出地址
+            // to    转入地址
+            // value 数量
+            // gas   不限制
+            // gasPrice(Gwei)  根据imtoken的建议值是9.1 - 100
+            // password 用户输入的密码
+            // privateKey_enc 加密的私钥
+            function transfer_eth(from, to, value, gasPrice, gas, password, privateKey_enc) {
+            console.log("transfer_eth: " + from+", "+to+", "+value+","+gasPrice+","+gas+","+password+","+privateKey_enc);
+
+                 if (!from || !to || false == web3.isAddress(to) ) {
+                    TransError = '地址有误~';
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: TransError, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+                }
+                // 判断参数
+                if (!from || !to || false == web3.isAddress(to) || !value || !gasPrice || !gas || !password || !privateKey_enc) {
+                    TransError = '参数有误~';
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: TransError, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+                }
+
+                // 引入核心模块
+                var Wallet = ethers.Wallet;
+                var utils = ethers.utils;
+                var providers = ethers.providers;
+
+                // 解密私钥
+                /*var privateKey = '0x46c0a2b03d5028b0b99aa25ea629d63cdde0ccf3b24bba3e62d83d29ac85e32f';
+                privateKey_enc = Encrypt(privateKey, password).toString();
+                console.log("privateKey_enc: " + privateKey_enc);*/
+                var privateKey = Decrypt(privateKey_enc, password);
+                console.log('privateKey: ' + privateKey);
+                if (!privateKey){
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: errorMsg, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+
+                }
+
+                // 初始化私钥,并判断地址是否一样
+                var wallet = new Wallet(privateKey);
+                console.log('Address: ' + wallet.address.toLocaleLowerCase());
+                console.log('AddressLOW: ' + from.toLocaleLowerCase());
+
+                if (wallet.address.toLocaleLowerCase() != from.toLocaleLowerCase()){
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: '钱包地址有误，请联系客服~', info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+
+                }
+
+                // 获取余额
+                var balance = getBalance(wallet.address);
+                console.log("balance1: " + balance);
+
+                // gas 和 gasPrice 传来的值分别是10进制和Gwei 需要转成十六进制
+                gasPrice = web3.toWei(gasPrice, 'gwei');
+                console.log("gasPrice: " + gasPrice);
+                gas = gas;
+                var gasPriceWei = utils.bigNumberify(gasPrice);
+                var gasWei = utils.bigNumberify(gas);
+                console.log("gasPriceWei: " + gasPriceWei);
+                console.log("gasWei: " + gasWei);
+                // 计算矿工手续费
+                var txFeeInWei = web3.fromWei( gasPriceWei.mul(gasWei), 'ether');
+                console.log("txFeeInWei: " + txFeeInWei);
+                // 计算最大提币数量
+                balance2 = balance.sub(txFeeInWei);
+                console.log("balance2: " + balance2);
+                // 判断可以余额是否大于提币金额
+                var compare_value = balance2.sub(value);
+                console.log("compare_value: " + compare_value);
+                if (compare_value<0){
+                    /*交互app*/
+                    var dataJson = {status: false, msg: '余额不足~', info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+                }
+                // This can now be sent to the Ethereum network
+                var network = providers.networks.mainnet;
+                //var provider = new providers.JsonRpcProvider('http://127.0.0.1:8545', network);
+                var provider = new providers.Web3Provider(web3.currentProvider, network);
+
+                // 组织数据
+                value = web3.fromDecimal(web3.toWei(value, 'ether'));
+                gasPrice = web3.fromDecimal(gasPrice);//web3.fromDecimal(getGasPrice());
+                gas = web3.fromDecimal(gas);//web3.fromDecimal(getEstimateGas(from, to, value));
+                gasLimit = web3.fromWei(gasPrice * gas, 'ether');
+                transactionNonce = getTransactionNonce(from);
+                var data = '';
+                console.log(gasLimit);
+                console.log(transactionNonce);
+
+                // 创建转账数据
+                var transaction = {
+                    gasLimit: gas,//21000,
+                    gasPrice: gasPrice,//utils.bigNumberify("20000000000"),
+                    from: from,
+                    to: to,
+                    value: value,//utils.parseEther("1.0")
+                    nonce: transactionNonce
+                };
+                console.log(transaction);
+
+                // 签名交易
+                var signedTransaction = wallet.sign(transaction);
+
+                // 转账
+                provider.sendTransaction(signedTransaction).then(function (hash) {
+                    console.log('Hash: ' + hash);
+                    // Hash:
+
+                    /*交互app*/
+                    var dataJson = {status: true, msg: '本次交易hash~', info: hash};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return ture;
+
+                });
+            }
+
+            //测试环境
+            //var contractAbi =[{"constant":true,"inputs":[],"name":"isPausedTransfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"ispause","type":"bool"}],"name":"pauseTransfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_value","type":"uint256"}],"name":"burn","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"value","type":"uint256"}],"name":"decreaseFreezeValue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"value","type":"uint256"}],"name":"freezeByValue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balancefrozenTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balancefrozen","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"times","type":"uint256[]"},{"name":"values","type":"uint256[]"}],"name":"freezeAccountTimeAndValue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"name":"frozeTimeValue","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"mintedAmount","type":"uint256"}],"name":"mintToken","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_value","type":"uint256"}],"name":"burnFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"}],"name":"accountNoneFrozenAvailable","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"frozenAccount","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"}],"name":"unfreezeAccountTimeAndValue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"value","type":"uint256"}],"name":"increaseFreezeValue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"freeze","type":"bool"}],"name":"freezeAccount","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"initialSupply","type":"uint256"},{"name":"tokenName","type":"string"},{"name":"tokenSymbol","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"target","type":"address"},{"indexed":false,"name":"frozen","type":"bool"}],"name":"FrozenFunds","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"target","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"FronzeValue","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"target","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"FronzeTimeValue","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"ispause","type":"bool"}],"name":"PauseChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Burn","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":false,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approved","type":"event"}];
+            //var contractAddress ='0x99b237d99561d68524cebdd3bbe64a1f6316f268';
+
+            //生产环境
+             var contractAbi = [{"constant":true,"inputs":[],"name":"isPausedTransfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"ispause","type":"bool"}],"name":"pauseTransfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_value","type":"uint256"}],"name":"burn","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"value","type":"uint256"}],"name":"decreaseFreezeValue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"value","type":"uint256"}],"name":"freezeByValue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balancefrozenTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balancefrozen","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"times","type":"uint256[]"},{"name":"values","type":"uint256[]"}],"name":"freezeAccountTimeAndValue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"name":"frozeTimeValue","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"mintedAmount","type":"uint256"}],"name":"mintToken","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_value","type":"uint256"}],"name":"burnFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"}],"name":"accountNoneFrozenAvailable","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"frozenAccount","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"}],"name":"unfreezeAccountTimeAndValue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"value","type":"uint256"}],"name":"increaseFreezeValue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"freeze","type":"bool"}],"name":"freezeAccount","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"initialSupply","type":"uint256"},{"name":"tokenName","type":"string"},{"name":"tokenSymbol","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"target","type":"address"},{"indexed":false,"name":"frozen","type":"bool"}],"name":"FrozenFunds","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"target","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"FronzeValue","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"target","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"FronzeTimeValue","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"ispause","type":"bool"}],"name":"PauseChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Burn","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":false,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approved","type":"event"}];
+             var contractAddress ='0x42a952Ac23d020610355Cf425d0dfa58295287BE';
+
+            var method = 'transfer';
+
+
+            /*代币转账*/
+            function transfer_contract(from, to, value, gasPrice, gas, password, privateKey_enc){
+                alert(contractAddress+"-"+contractAbi+"-"+method+"-"+from+"-"+to+"-"+value+"-"+gasPrice+"-"+gas+"-"+password+"-"+privateKey_enc);
+                // 判断参数
+                if (!contractAddress|| !contractAbi || !method || !from || !to || !value || !gasPrice || !gas || !password || !privateKey_enc) {
+                    TransError = '参数有误~';
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: TransError, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+                }
+              //  Interactive.transFerEth(contractAddress+"-"+contractAbi+"-"+method+"-"+from+"-"+to+"-"+value+"-"+gasPrice+"-"+gas+"-"+password+"-"+privateKey_enc);
+
+                // 引入核心模块
+                var Wallet = ethers.Wallet;
+                var Contract = ethers.Contract;
+                var utils = ethers.utils;
+                var providers = ethers.providers;
+
+                // 解密私钥
+                /*var privateKey = '0x46c0a2b03d5028b0b99aa25ea629d63cdde0ccf3b24bba3e62d83d29ac85e32f';
+                privateKey_enc = Encrypt(privateKey, password).toString();
+                console.log("privateKey_enc: " + privateKey_enc);*/
+                var privateKey = Decrypt(privateKey_enc, password);
+                // console.log('privateKey: ' + privateKey);
+                if (!privateKey){
+                    /*交互app*/
+                    var dataJson = {status: false, msg: errorMsg, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+                }
+
+                // 初始化provider
+                // This can now be sent to the Ethereum network
+                var network = providers.networks.unspecified;
+                console.log(providers.networks)
+                //var provider = new providers.JsonRpcProvider('http://127.0.0.1:8545', network);
+                var provider = new providers.Web3Provider(web3.currentProvider, network);
+                //var provider = ethers.providers.getDefaultProvider('mainnet');
+
+                // 初始化私钥,并判断地址是否一样
+                var wallet = new Wallet(privateKey, provider);
+                // console.log(wallet)
+                if (wallet.address.toLocaleLowerCase() != from.toLocaleLowerCase()){
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: '钱包地址有误，请联系客服~', info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+
+                }
+
+                // 初始化合约对象
+                var contract = new Contract(contractAddress, contractAbi, wallet);
+                // console.log(contract);
+                // console.log('contract:' + JSON.stringify(contract));
+
+                // 获取代币的有效小数位数
+                var decimalsObj = contract.decimals();
+                decimalsObj.then(function(result) {
+                    var decimals =  parseFloat(result.toString());
+                    var weight = Math.pow(10,decimals);// 计算代币的小数点位数
+                    console.log('weight:::'+weight);
+                    alert("weight,"+weight.toString());
+                    // 获取余额
+                    var balanceObj = contract.balanceOf(from);
+                    balanceObj.then(function(result) {
+                        var balance =  parseFloat(result.toString())/weight;
+                        console.log('balance:::'+balance);
+                        alert("balance,"+balance.toString());
+                        // gas 和 gasPrice 传来的值分别是10进制和Gwei 需要转成十六进制
+                        gasPrice = web3.toWei(gasPrice, 'gwei');
+                        console.log("gasPrice: " + gasPrice);
+                        alert("gasPrice,"+gasPrice.toString());
+                        gas = parseInt(gas);
+                        var gasPriceWei = utils.bigNumberify(gasPrice);
+                        var gasWei = utils.bigNumberify(gas);
+                        console.log("gasPriceWei: " + gasPriceWei);
+                        console.log("gasWei: " + gasWei);
+                        alert("gasPriceWei,"+gasPriceWei.toString());
+                        alert("gasWei,"+gasWei.toString());
+                        // 计算矿工手续费
+                        var txFeeInWei = web3.fromWei( gasPriceWei.mul(gasWei), 'ether');
+                        console.log("txFeeInWei: " + txFeeInWei);
+                        alert("txFeeInWei,"+txFeeInWei.toString());
+                        // 计算最大提币数量
+                        balance2 = balance-parseFloat(txFeeInWei);
+                        console.log("balance2: " + balance2);
+                        alert("balance2,"+balance2.toString());
+                        // 判断可以余额是否大于提币金额
+                        var compare_value = balance2-parseFloat(value);
+                        console.log("compare_value: " + compare_value);
+
+                        alert("compare_value,"+compare_value.toString());
+                        if (compare_value<0){
+                            /*交互app*/
+                            var dataJson = {status: false, msg: '余额不足~', info: 0};
+                            console.log("dataArr: " + JSON.stringify(dataJson));
+                            Interactive.transFerEth(JSON.stringify(dataJson));
+                            alert("余额不足,"+JSON.stringify(dataJson));
+                            return false;
+                        }
+
+                        // 转账
+                        var transAction = {
+                            gasLimit: gas,
+                            gasPrice: parseFloat(gasPrice)
+                        };
+                        // parseFloat(value)*parseFloat(weight)
+                        value = parseFloat(value)*parseFloat(weight);
+
+                        var egas=getEstimateGas(from,to,value);
+                        var ethShouldBalance=egas*gasPrice/1000000000000000000;
+                        var ethBalance = getBalance(from);
+                        if(ethBalance<ethShouldBalance){
+                            console.log("手续费不足");
+                            var dataJson = {status: false, msg: '手续费不足', info: 0};
+                            //console.log("dataArr: " + JSON.stringify(dataJson));
+                            Interactive.transFerEth(JSON.stringify(dataJson));
+                        }
+
+                        var transResult = contract.transfer(to, value.toString(),transAction);
+                        alert("transResult,"+transResult.toString());
+                        transResult.then(function(result) {
+                        //alert("result,"+result.toString());
+                            //console.log(result);
+                            //alert("转账,"+result+"-");
+                            /*交互app*/
+                            var dataJson = {status: true, msg: '转账成功~', info: result};
+                            alert("dataJson,"+JSON.stringify(dataJson));
+                            console.log("dataArr: " + JSON.stringify(dataJson));
+                            Interactive.transFerEth(JSON.stringify(dataJson));
+                            return false;
+
+                        });
+                    });
+                });
+
+                /*var transAction = {
+                    gasLimit: 250000,
+                    gasPrice: 9000000000,
+                    nonce: 0
+                };
+                var transResult = contract.balanceOf(from);
+                console.log(transResult);
+
+                transResult.then(function(result) {
+                    console.log(result.toString());
+                });*/
+
+                // console.log('balance:' + JSON.stringify(balance));
+
+
+                /*var transResult2 = contract.transfer(to, 99999999000000);
+                console.log(transResult2);
+
+                transResult2.then(function(result) {
+                    console.log(result.toString());
+                });*/
+
+                /*var transResult2 = contract.transferFrom(to, from, 100000000000000);
+                console.log(transResult2);
+
+                transResult2.then(function(result) {
+                    console.log(result.toString());
+                });*/
+            }
+</script>
+
+</body>
+</html>

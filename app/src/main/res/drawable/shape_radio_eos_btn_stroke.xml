@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="0"
+        android:endColor="@color/eos_btn_begin_color"
+        android:startColor="@color/eos_btn_end_color" />
+
+    <solid
+        android:color="@color/white"
+        />
+
+    <stroke
+        android:width="0.5dp"
+        android:color="@color/eos_import_tab_select_color"
+        />
+
+    <corners
+        android:bottomLeftRadius="45dp"
+        android:bottomRightRadius="45dp"
+        android:topLeftRadius="45dp"
+        android:topRightRadius="45dp" />
+
+</shape>

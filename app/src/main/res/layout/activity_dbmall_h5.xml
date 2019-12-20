@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:yangzhe="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/ll_web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.tymall.utils.webview.ScrollWebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.tymall.view.XProgressBar
+                android:id="@+id/pb"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                yangzhe:max="100"
+                yangzhe:progressColor="#FC0249"
+                yangzhe:progressHeight="8" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+

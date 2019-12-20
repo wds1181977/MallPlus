@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "countryCode": "86",
+    "showName": "+86（China）"
+  },
+  {
+    "id": "2",
+    "countryCode": "82",
+    "showName": "+82（Korea）"
+  },
+  {
+    "id": "3",
+    "countryCode": "81",
+    "showName": "+81（Japan）"
+  },
+  {
+    "id": "4",
+    "countryCode": "66",
+    "showName": "+66（Thailand）"
+  },
+  {
+    "id": "5",
+    "countryCode": "65",
+    "showName": "+65（Singapore）"
+  },
+  {
+    "id": "6",
+    "countryCode": "60",
+    "showName": "+60（Malaysia）"
+  },
+  {
+    "id": "7",
+    "countryCode": "1",
+    "showName": "+1（US）"
+  }
+]

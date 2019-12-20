@@ -1,0 +1,1376 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">好货商城</string>
+    <string name="coin_name">DBM</string>
+    <string name="fg_ucenter_vip">申请VIP</string>
+    <string name="fg_ucenter_list">收益清单</string>
+    <string name="exchange_record">兑换记录</string>
+
+
+    <string name="help_center">帮助中心</string>
+    <string name="fg_ucenter_contact">联系我们</string>
+    <string name="fg_ucenter_setting">系统设置</string>
+    <string name="fg_ucenter_logout">退出登录</string>
+    <string name="setting_more_language">多语言</string>
+    <string name="setting_alter_pwd">修改密码</string>
+    <string name="export_ks">导出私钥</string>
+    <string name="export_keystore">导出keystore</string>
+    <string name="export_wallet">导出钱包</string>
+    <string name="about_us">关于我们</string>
+    <string name="about_use_agreement">用户协议</string>
+    <string name="about_service_agreement">服务协议</string>
+    <string name="about_us_version">软件版本</string>
+    <string name="wallet_name">钱包名称</string>
+    <string name="wallet_address">钱包地址</string>
+    <string name="wallet_address_new">钱包地址:</string>
+    <string name="add_wallet_type">币种</string>
+    <string name="transaction_pwd">交易密码</string>
+    <string name="confirm_tran_pwd">确认交易密码</string>
+    <string name="forget_pwd">忘记密码</string>
+    <string name="botton_complete">完成</string>
+    <string name="alter_title">修改密码</string>
+    <string name="old_pwd">原密码</string>
+    <string name="new_pwd">新密码</string>
+    <string name="pwd_confirm">确认密码</string>
+    <string name="coin_receive">收款</string>
+    <string name="coin_pay">付款</string>
+    <string name="coin_exchange">兑换</string>
+    <string name="coin_recent_transaction">最近交易</string>
+    <string name="contact_title">联系人</string>
+    <string name="contact_us_title">联系我们</string>
+    <string name="contactus_wechat">微信联系</string>
+    <string name="create_wallet_title">创建钱包</string>
+    <string name="password">密码</string>
+    <string name="password_tip">密码提示信息（可不填）</string>
+    <string name="create_wallet">创建钱包</string>
+    <string name="import_wallet">导入钱包</string>
+    <string name="exchange_charge">手续费</string>
+    <string name="exchange_total">最大兑换数量：</string>
+    <string name="number">数量</string>
+    <string name="exchange_number">兑换数量</string>
+    <string name="charge_number">总兑换币数量：0</string>
+    <string name="submit">提交</string>
+    <string name="next">下一步</string>
+    <string name="export_success">导出成功</string>
+    <string name="user_name">用户名</string>
+    <string name="keystore">私钥 </string>
+    <string name="keystore_new">私钥: </string>
+    <string name="save_screenshot">保存截图 </string>
+    <string name="copy">复制至粘贴板 </string>
+    <string name="questions">常见问题 </string>
+    <string name="mnemonic_tip">请将它准确地抄在纸上，并存在一个安全的地方</string>
+    <string name="mnemonic_backups">备份助记词</string>
+    <string name="system_notice">消息中心</string>
+    <string name="business_partner">商业伙伴 </string>
+    <string name="error_pwd">密码输入有误</string>
+    <string name="my_share">我的邀请码：</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="register_suc">注册成功</string>
+    <string name="pool">矿池</string>
+    <string name="pool_total">矿池币总数量</string>
+    <string name="start">启动</string>
+    <string name="stop">停止</string>
+    <string name="pay_wallet">付款钱包</string>
+    <string name="receiver">收款方</string>
+    <string name="receiver2">接收方</string>
+    <string name="confirm_pay">确认付款</string>
+    <string name="fasongqianbao">发送钱包</string>
+    <string name="beizhu">备注</string>
+    <string name="beizhu2">备注（选填）</string>
+    <string name="pay_money">付款金额</string>
+    <string name="money">金额</string>
+    <string name="pay_success">付款成功</string>
+    <string name="start_record">启动记录</string>
+    <string name="no_record">暂无记录</string>
+    <string name="profit_total">总收益</string>
+    <string name="cur_price">(实时价格)</string>
+    <string name="today_value">今日值：</string>
+    <string name="total_value">伙伴总值：</string>
+    <string name="zhineng">今日智能收益</string>
+    <string name="lianjie">今日链接收益</string>
+    <string name="gaoguan">今日高管佣金</string>
+    <string name="jiaoyi">今日交易佣金</string>
+    <string name="receive_wallet">收款钱包</string>
+    <string name="zxing">点击二维码可复制接收地址</string>
+    <string name="transalate_record">交易记录</string>
+    <string name="transalate_details">交易详情</string>
+    <string name="transalate_success">交易成功</string>
+    <string name="shaixuan">筛选</string>
+    <string name="nodata">暂无内容</string>
+    <string name="apply">申请</string>
+    <string name="watting">请稍后...</string>
+    <string name="bank_money">银行资产</string>
+
+
+    <string name="start_import">开始导入</string>
+    <string name="agree">注册即同意</string>
+    <string name="agrees">服务及隐私条款</string>
+
+    <string name="password_et">请输入密码</string>
+    <string name="password_confirm_et">请输入确认密码</string>
+    <string name="password_pwd_tip_et">请输入密码提示（可不填）</string>
+    <string name="pwd_tip">不少于8位字符，建议混合大小写字母、数字、特殊字符</string>
+    <string name="wallet_mn_et">请输入助记词，单词间用空格隔开</string>
+    <string name="keystore_et">请输入明文私钥</string>
+    <string name="import_tip">直接复制粘贴钱包 keystore 文件内容至输入框。</string>
+    <string name="zichanmingcheng">资产名称</string>
+    <string name="shishijiage">实时价格</string>
+    <string name="zhangfudiefu">涨幅跌幅</string>
+    <string name="emails">邮箱地址</string>
+    <string name="login_pwd">登录密码</string>
+    <string name="confirm_login_pwd">确认登录密码</string>
+    <string name="yaoqingma">邀请码（必填）</string>
+    <string name="cancle">取消</string>
+
+
+    <string name="password_type">密码类型:</string>
+
+    <string name="password_type_new">密码类型</string>
+
+    <string name="login_password">登录密码</string>
+
+    <string name="choose_to_change_your_password">选择修改密码</string>
+
+    <string name="assets">资产</string>
+
+    <string name="determine">确定</string>
+
+    <string name="delete_contact">删除联系人</string>
+
+    <string name="make_sure_to_delete_the_contact">确定删除联系人?</string>
+
+    <string name="mailbox">邮箱</string>
+
+    <string name="registration_agreement">注册协议</string>
+
+    <string name="created_please_wait">创建中，请稍后...</string>
+
+    <string name="two_password_entries_are_inconsistent">两次密码输入不一致</string>
+
+    <string name="exceeded_convertible_quantity">已超出最大可兑换数量</string>
+
+    <string name="balance">余额</string>
+
+    <string name="balance_new">余额:</string>
+
+    <string name="handling_fee">手续费:</string>
+
+
+    <string name="total_number_of_coins_exchanged">总兑换币数量:</string>
+
+    <string name="network_connection_error">网络连接错误</string>
+
+    <string name="permission_denied">没有权限无法保存截图呦~</string>
+
+    <string name="wallet_name_new">钱包名称:</string>
+
+    <string name="mnemonic">助记词</string>
+
+    <string name="official_wallet">官方钱包</string>
+
+    <string name="successfully_imported">导入成功</string>
+
+    <string name="processing">处理中...</string>
+
+    <string name="jump_over">跳过</string>
+
+    <string name="experience_now">立即体验</string>
+
+    <string name="press_again_to_exit_the_program">再按一次退出程序</string>
+
+    <string name="download_progress">下载进度</string>
+
+    <string name="please_click_on_the_mnemonic_in_order">请按顺序点击助记词，确认本助记词正确</string>
+
+    <string name="mnemonic_recovery_wallet">助记词用户恢复钱包或重置钱包密码，将它准确的抄写在纸上，并存放在只有你知道的安全的地方。</string>
+
+    <string name="backup_private_key">备份私钥</string>
+
+    <string name="private_key_new">私钥:</string>
+
+    <string name="payment_address">付款地址</string>
+
+    <string name="collection_address">收款地址</string>
+
+    <string name="miner_fee">矿工费</string>
+
+    <string name="transaction_hour">交易时间</string>
+
+    <string name="close_the_mining_pool">关闭矿池</string>
+
+    <string name="no_permission_to_scan">没有权限无法扫描呦~</string>
+
+    <string name="please_enter_the_payment_amount">请输入付款金额</string>
+
+    <string name="insufficient_balance">余额不足</string>
+
+    <string name="total_partner_value">伙伴总值:</string>
+
+    <string name="dbm_real_time_price">DBM实时价格</string>
+
+
+    <string name="simplified_chinese">简体中文</string>
+
+    <string name="english">English</string>
+
+    <string name="choose_language">选择语言</string>
+
+    <string name="transaction_hash">交易哈希</string>
+
+    <string name="block">区块</string>
+
+    <string name="successful_payment">收款成功</string>
+
+    <string name="all">全部</string>
+
+    <string name="application_quota">申请额度</string>
+
+    <string name="application">申请</string>
+
+    <string name="diamond_vip">钻石VIP</string>
+
+    <string name="apply_to_cancel_vip">申请取消VIP</string>
+
+    <string name="ordinary_vip">普通VIP</string>
+
+    <string name="diamond_vip_application">钻石VIP申请中</string>
+
+    <string name="application_canceled">撤销申请</string>
+
+    <string name="ordinary_vip_application">普通VIP申请中</string>
+
+    <string name="amount">额度</string>
+
+    <string name="please_select_the_application_quota">请选择申请额度</string>
+
+    <string name="dbm_balance">DBM余额:</string>
+
+    <string name="currency_list">币种列表</string>
+
+    <string name="total_assets">总资产(¥)</string>
+
+    <string name="not_logged_in">未登录</string>
+
+    <string name="loading_data">正在加载数据</string>
+
+    <string name="network_request_data_is_abnormal">网络请求数据出现异常</string>
+
+    <string name="take_photo">拍照</string>
+
+    <string name="choose_from_album">从相册选择</string>
+
+
+    <string name="forget_pwd_new">忘记密码?</string>
+
+    <string name="mine_balance">矿池余额:</string>
+
+    <string name="receipt">收款</string>
+
+    <string name="mine_pool_has_been_opened">已开启矿池</string>
+
+    <string name="mine_pool_not_opened">未开启矿池</string>
+
+    <string name="successful_redemption">兑换成功</string>
+
+
+    <string name="add_contact">添加联系人</string>
+
+    <string name="no_data">暂无数据...</string>
+
+
+    <string name="update_immediately">立即更新</string>
+
+    <string name="talk_about_it_later">以后再说</string>
+
+    <string name="dui">兑</string>
+
+    <string name="transaction_failed">交易失败</string>
+
+    <string name="processing_new">处理中</string>
+
+
+    <string name="please_enter_the_transaction_password">请输入交易密码</string>
+
+    <string name="please_confirm_the_transaction_password">请确认交易密码</string>
+
+    <string name="wallet_name_et">请输入钱包名称</string>
+
+    <string name="peplication_failed">复制失败，请检查网络</string>
+
+    <string name="to_convert_the_currency_amount">请输入要兑换币种数量</string>
+
+    <string name="exit_successfully">退出成功</string>
+
+    <string name="keystore_pwd">请输入keystore导出密码</string>
+
+    <string name="keystore_content">请输入keystore内容</string>
+
+
+    <string name="password_cannot_be_less_than_digits">密码不能少于8位</string>
+
+
+    <string name="please_input_the_email_address">请输入邮箱地址</string>
+
+    <string name="please_enter_your_password">请输入登录密码</string>
+
+    <string name="please_confirm_the_login_password">请确认登录密码</string>
+
+
+    <string name="please_enter_the_invitation_code">请输入邀请码</string>
+
+    <string name="please_enter_your_wallet_password">请输入钱包密码</string>
+
+    <string name="please_confirm_the_wallet_password">请确认钱包密码</string>
+
+    <string name="please_enter_a_mnemonic">请输入助记词</string>
+
+    <string name="screenshot_saved_to_album">截图已经保存至相册</string>
+
+    <string name="copied_to_clipboard">已复制至剪贴板</string>
+
+    <string name="the_address_has_been_copied_to_the_clipboard">地址已复制至剪贴板</string>
+
+    <string name="backup_success">备份成功！请牢记助记词！</string>
+
+    <string name="please_reselect_the_mnemonic_order">您的选择有误，请重新选择助记词顺序。</string>
+
+
+    <string name="please_enter_user_name">请输入用户名</string>
+
+    <string name="please_enter_the_wallet_address">请输入钱包地址</string>
+
+    <string name="the_address_format_is_incorrect">地址格式不正确</string>
+
+    <string name="please_select_a_currency">请选择币种</string>
+
+    <string name="please_enter_the_original_password">请输入原密码</string>
+
+    <string name="please_enter_a_new_password">请输入新密码</string>
+
+    <string name="please_confirm_the_new_password">请确认新密码</string>
+
+    <string name="please_enter_the_private_key">请输入私钥</string>
+
+
+    <string name="no_stop_for_the_mine_pool">暂无可停止矿池</string>
+
+    <string name="please_enter_the_payee_address">请输入收款方地址</string>
+
+    <string name="insufficient_account_balance">账户余额不足</string>
+
+    <string name="inconsistent_login_password">登录密码不一致</string>
+
+    <string name="inconsistent_transaction_password">交易密码不一致</string>
+
+    <string name="tick_record">提币记录</string>
+
+
+    <!--由待审核改为待处d理-->
+    <string name="pending_review">待处理</string>
+
+    <string name="tansaction_pending">待交易</string>
+
+    <string name="rejected_transaction">交易拒绝</string>
+
+    <string name="take_out">打包中</string>
+
+    <string name="please_agree_to_the_service_and_privacy_policy_first">请先同意服务及隐私条款</string>
+
+    <string name="private_key_format_is_incorrect">私钥格式不正确</string>
+
+    <string name="please_login_to_operate">请登录后操作</string>
+
+
+    <string name="slow">慢</string>
+
+    <string name="fast">快</string>
+
+    <string name="the_mnemonic_input_is_incorrect">助记词输入有误，请重新输入</string>
+
+    <string name="mine_pool_income">智能收益</string>
+
+    <string name="share_income">链接收益</string>
+
+    <string name="incorrect_wallet_password">钱包密码不正确</string>
+
+    <string name="mnemonic_is_incorrect">助记词不正确</string>
+
+    <string name="send_amount">发送金额</string>
+
+    <string name="failed_to_generate_signature">生成签名失败！请重试</string>
+
+    <string name="select">选择</string>
+
+    <string name="export_failed_please_contact_customer_service">导出失败，请联系客服。</string>
+
+    <string name="open">开启</string>
+    <string name="shut_down">关闭</string>
+
+
+    <string name="handling_fee_new">手续费</string>
+
+
+    <string name="withdrawing_details">提币详情</string>
+
+    <string name="withdrawing_address">提币地址</string>
+
+    <string name="withdrawing_time">提币时间</string>
+
+    <string name="forgot_password_reminder">忘记密码提示</string>
+
+    <string name="forgot_password_reminder_content">请您退出该页面，点击个人主页---系统设置---修改密码，然后选择密码类型为“交易密码”，即可进行密码修改。</string>
+
+    <string name="ren_min_bi">¥</string>
+
+    <string name="dollar">$</string>
+
+    <string name="han_yuan">KRW</string>
+
+    <string name="payment_address_cannot_be_your_own">收款地址不能是自己</string>
+
+    <string name="add_new_assets">添加新资产</string>
+
+    <string name="transfer_amount_cannot_be">转账金额不能为0</string>
+
+
+    <string name="management_wallet">管理钱包</string>
+
+    <string name="save">保存</string>
+
+
+    <string name="wallet_name_at_least_two_characters">钱包名称至少两个字符</string>
+
+    <string name="please_enter_your_current_password">请输入原密码</string>
+
+    <string name="old_password_cannot_be_less_than_digits">原密码不能少于8位</string>
+
+    <string name="new_password_cannot_be_less_than_digits">新密码不能少于8位</string>
+
+    <string name="wallet_data_error">钱包数据错误</string>
+
+    <string name="password_has_been_updated">修改密码成功</string>
+
+    <string name="current_password">原密码</string>
+
+    <string name="repeat_new_password">重复新密码</string>
+
+
+    <string name="this_address">此地址(</string>
+
+    <string name="mismatch">）与本地钱包地址不匹配</string>
+
+
+    <string name="delete_wallet">删除钱包</string>
+
+    <string name="export_digital_bank_private_key">导出数字银行私钥</string>
+
+    <string name="wallet_name_two">钱包名</string>
+
+    <string name="mdified_by_the_original_password">通过原密码修改</string>
+
+    <string name="modified_by_private_key">通过私钥修改</string>
+
+    <string name="this_can_not_be_undone">请慎重，此操作无法撤销</string>
+
+
+    <string name="import_a_mnemonic_or_private_key_to_reset">忘记密码？导入助记词或私钥可重置密码。</string>
+
+    <string name="import_now">马上导入</string>
+
+    <string name="wallet">钱包</string>
+
+    <string name="bank">银行</string>
+
+    <string name="mine">我的</string>
+
+    <string name="hangqing">行情</string>
+
+    <string name="modify_digital_bank_password">修改数字银行密码</string>
+
+    <string name="transfer_amount_is_too_small_to_transfer">转账金额太小,不能转账</string>
+
+    <string name="under_development_stay_tuned">正在开发中，敬请期待！</string>
+
+    <string name="the_request_failed_please_try_again">请求失败，请重试！</string>
+
+    <string name="abnormal">异常</string>
+
+    <string name="more_details">更多详情</string>
+
+    <string name="more_details_new">更多详情></string>
+
+
+    <string name="password_hint">密码提示</string>
+
+    <string name="the_password_prompt_is_not_consistent_with_the_password">密码提示不可以和密码一致，请重新输入！</string>
+
+    <string name="open_the_mining_pool">进入矿池</string>
+
+    <string name="please_enter_the_number_of_open">请输入数量</string>
+
+    <string name="continued_voting">续投</string>
+
+    <string name="confirm">确认</string>
+
+    <string name="edit_contact">编辑联系人</string>
+
+    <string name="edit">编辑</string>
+
+    <string name="insufficient_balance_please_pay_miner_fee">余额不足，请支付矿工费!</string>
+
+    <string name="contact_at_least_two_characters">联系人备注至少两个字符</string>
+
+    <string name="registered_to_divide_100_million_dbm">注册瓜分1亿枚DBM</string>
+
+    <string name="screenshot_sharing_exclusive_invitation_code">截图分享专属邀请码</string>
+
+    <string name="dbank_is_sprinkling_candy">D-BANK正在撒糖果</string>
+
+    <string name="copy_address">复制地址</string>
+
+    <string name="prompt">温馨提示</string>
+
+    <string name="mall">商城</string>
+
+    <string name="setting_share_link">分享链接</string>
+
+    <string name="setting_exchange_list">交易记录</string>
+
+    <string name="setting_version_update">版本更新</string>
+
+    　
+
+    <string name="select_the_mine_to_be_closed">选择要关闭的矿池</string>
+
+    <string name="close_mine_pool_hint">1.静态矿池挖矿在90天内提币，扣除手续费8%\n2.静态矿池挖矿在90天以上扣除1%</string>
+
+    <string name="daily_rate_of_return">日收益率</string>
+
+    <string name="yesterday_earnings">昨日收益</string>
+
+    <string name="yesterday_earnings_new">昨日收益:</string>
+
+    <string name="income_growth_curve">收益增长曲线</string>
+
+    <string name="you_have_earned_income">您已赚取收益:</string>
+
+    <string name="time_day">时间/日</string>
+
+    <string name="product_details">产品详情</string>
+
+    <string name="total_amount">总金额</string>
+
+    <string name="cumulative_income">累计收益</string>
+
+    <string name="cumulative_income_new">累计收益:</string>
+
+    <string name="deposit_funds">存入资金</string>
+
+    <string name="starting_time">开始时间:</string>
+
+    <string name="mining_and_wealth_management_products">挖矿理财产品</string>
+
+    <string name="market">市场</string>
+
+    <string name="hold">持有</string>
+
+    <string name="my_assets">我的资产</string>
+
+    <string name="asset_list">资产列表</string>
+
+    <string name="mining_and_financing">挖矿理财</string>
+
+    <string name="setting_notice_success">交易已确认</string>
+    <string name="setting_notice_check">查看详请</string>
+
+    <string name="investment">投入金额</string>
+
+    <!--例如： 100DBM起投  Get up to 100 DBM-->
+
+    <string name="you_haven_opened_the_mine_yet">您还没有开启矿池</string>
+
+    <string name="search_tx_new">搜索</string>
+
+    <string name="please_select_the_mine_to_be_closed">请选择要关闭的矿池</string>
+
+    <string name="login_out_ok">确定要退出登录吗?</string>
+
+    <string name="string_sure_confirm">确定</string>
+
+    <string name="string_sure_confirm_pay">确认付款</string>
+
+    <string name="ssl_error_title">SSL证书错误</string>
+    <string name="ssl_error_message_default">SSL证书错误</string>
+    <string name="ssl_error_message_untrusted">证书不可信</string>
+    <string name="ssl_error_message_expired">证书过期了</string>
+    <string name="ssl_error_message_id_mismatch">证书主机名不匹配</string>
+    <string name="ssl_error_message_not_valid">证书还未生效</string>
+    <string name="ssl_error_wether_continue">是否继续？</string>
+
+    <string name="prompt_content">由于以太坊网络有时会出现拥堵，导致区块确认较慢，最终可能造成提币延迟的情况，如果您的提币到账时间没有超过12个小时，请耐心等待，若超过12个小时，可以联系客服人员。</string>
+
+    <string name="prompt_content_btc">由于Btc coin网络有时会出现拥堵，导致区块确认较慢，最终可能造成提币延迟的情况，如果您的提币到账时间没有超过12个小时，请耐心等待，若超过12个小时，可以联系客服人员。</string>
+
+    <string name="registration_success_prompt_one">恭喜您成功开启财富之旅! 成为D-BANK全球第</string>
+
+    <string name="registration_success_prompt_two">名用户!</string>
+
+    <!--EOS wallet start-->
+    <string name="import_eos_prv_msg">输入Private Key文件内容至输入框。或通过扫描Private Key 内容生成的二维码录入。</string>
+    <string name="import_eos_wallet">导入EOS钱包</string>
+    <string name="eos_import_failed">导入失败</string>
+    <string name="eos_import_no_account">该私钥或助记词对应公钥无EOS账户</string>
+    <string name="string_eth_dialog_error_get_eos_publci_key">获取EOS公钥失败</string>
+    <string name="setting_get_eos_node_erro">获取EOS节点信息异常</string>
+    <string name="eos_select_eos_account">选择一个EOS账户</string>
+    <string name="eos_account">账户</string>
+    <string name="eos_input_mne">输入助记词内容至输入框</string>
+    <string name="eos_account_name">账户名</string>
+    <string name="eos_import_mne">导出助记词</string>
+    <string name="eos_resource_managment">资源管理</string>
+    <string name="view_permission">查看权限</string>
+    <string name="create_eos_account">创建EOS账户</string>
+    <string name="create_eos_account_info">账户信息</string>
+    <string name="create_eos_account_name">账户名</string>
+    <string name="create_eos_resource_title">账号初始资源分配</string>
+    <string name="create_eos_cpu_res">CPU资源</string>
+    <string name="create_eos_net_res">网络资源</string>
+    <string name="create_eos_ram_res">内存资源</string>
+    <string name="create_eos_use">总消耗</string>
+    <string name="create_eos_pay_fun">支付方式</string>
+    <string name="create_eos_dbank_balance">银行中可用ETH余额:</string>
+    <string name="create_eos_btn">创建</string>
+    <string name="create_eos_pay">充值</string>
+    <string name="create_eos_reg">12位字符(只能包括a&#8211;z和1&#8211;5)</string>
+    <string name="create_eos_pwd">密码</string>
+    <string name="create_eos_pwd_se">确认密码</string>
+    <string name="create_eos_pwd_re">再次输入密码</string>
+    <string name="eos_assets">EOS资产</string>
+    <string name="eos_transfer">转账</string>
+    <string name="eos_input_asset">输入金额</string>
+    <string name="eos_to_account">收款地址</string>
+    <string name="eos_memo">备注：</string>
+    <string name="eos_transfer_intpu_amount">请输入数量</string>
+    <string name="string_eos_transfer_amount_is_zero">转账数量需大于0</string>
+    <string name="eos_transfer_amount_erro">转账金额不正确</string>
+    <string name="string_eos_transfer_amount_error">请输入有效的数量并且小数点后不能超过<xliff:g id="yyy">%d</xliff:g>位</string>
+    <string name="string_balance_not_enough">余额不足</string>
+    <string name="eos_transfer_to_no_same">转账地址不能相同</string>
+    <string name="eos_transfer_intpu_address">请输入转账地址</string>
+    <string name="eos_input_to_account">请输入EOS账户名</string>
+    <string name="eos_input_error_notice">提示</string>
+    <string name="pay_detail">支付详情</string>
+    <string name="pay_from">付款地址</string>
+    <string name="pay_to">收款地址</string>
+    <string name="sign_fail">签名失败</string>
+    <string name="string_eos_transfer_push_succes">交易广播成功</string>
+    <string name="string_eos_transfer_push_fail">交易广播失败</string>
+    <string name="string_eos_import_private">导出私钥</string>
+    <string name="string_eos_import_role">角色</string>
+    <string name="string_eos_import_pubkey">公钥</string>
+    <string name="string_eos_import_prvkey">私钥</string>
+    <string name="string_eos_import_copy">复制</string>
+    <string name="string_eos_import_zing">二维码</string>
+    <string name="string_eos_import_mingwen">明文</string>
+    <string name="string_eos_wight">(权重阈值:</string>
+    <string name="string_has_been_copy">已复制</string>
+    <string name="string_view_per">权限查看</string>
+    <string name="string_weight_key">权重</string>
+    <string name="string_eos_what_owner">owner角色拥有账户所有权，用于权限设置，以及管理其他角色。</string>
+    <string name="string_eos_what_active">active角色用于日常转账、投票等操作。</string>
+    <string name="string_eos_wight_key">权重阈值</string>
+    <string name="string_eos_what_weight">权重阈值,代表角色操作所需等最低权重。</string>
+    <string name="string_eos_icon">图标</string>
+    <string name="string_eos_icon_value">该符号代表公钥对应的私钥存在余当前钱包。</string>
+    <string name="string_please_write_min">请仔细抄写下方助记词，我们将在下一步验证</string>
+    <string name="string_please_no_screenshots">请勿截图</string>
+    <string name="string_please_no_screenshots_msg">如果有人获取你的助记词将直接获取你的资产！请抄写下助记词并存放在安全的地方。</string>
+    <string name="string_con_min">确认助记词</string>
+    <string name="string_con_min_msg">请按顺序点击助记词，以确认您正确身份。</string>
+    <string name="string_go_it">知道了</string>
+    <string name="string_eos_no_equal_account">导入的账户与本地原钱包账户不匹配</string>
+    <string name="string_eos_no_equal_pub">导入私钥对应的公钥与本地原钱包公钥不匹配</string>
+    <string name="string_exprot_success">导出成功</string>
+    <string name="string_input_eos_pwd">输入EOS交易密码</string>
+    <string name="string_input_pwd_et">请输入密码</string>
+    <string name="string_send">转账</string>
+    <string name="string_cancel">取消</string>
+    <string name="account_name_error">账户名称必须为a&#8211;z与1&#8211;5组成对12位字符，字母需小写</string>
+    <string name="string_sub_fail">提交失败,请重试</string>
+    <string name="string_being_create_eos_wallet">正在创建EOS钱包&#8230;</string>
+    <string name="string_create_success">创建成功</string>
+    <string name="string_eos_tx_error">交易参数错误</string>
+    <string name="string_can_user_eth_msg">获取银行中ETH余额失败</string>
+    <string name="string_need_user_eth_msg">获取需要消耗ETH金额失败</string>
+    <string name="string_need_user_eth_no_eng">银行中ETH余额不足，请充值</string>
+    <string name="string_create_erro">提交工单失败</string>
+    <string name="string_sub_sucess">提交成功</string>
+    <string name="string_input_eos_account_exit">该账户名已存在，请重新输入</string>
+    <string name="string_get_account_fail">获取账户失败</string>
+    <string name="eos_total_assets">总资产(EOS)</string>
+    <string name="mortgage">抵押</string>
+    <string name="redemption">赎回</string>
+    <string name="memory_needs_to_be_purchased_using_eos">注：内存需要使用EOS购买</string>
+    <string name="bandwidth_needs_to_be_purchased_using_eos">注：带宽需要使用EOS购买</string>
+    <string name="why_do_need_to_purchase_resources">为什么需要购买资源？</string>
+    <string name="why_buy_res">为什么需要购买资源</string>
+    <string name="available_ram">可用RAM</string>
+    <string name="current_price">当前价格(EOS/kb)</string>
+    <string name="buy">买入</string>
+    <string name="sell">卖出</string>
+    <string name="buy_quantity">买入数量</string>
+    <string name="eos_balance">EOS余额：</string>
+    <string name="receiving_account">接收账户</string>
+    <string name="can_also_be_purchased_for_other_accounts">注:除了给自己账户购买，也可给其他账户购买。</string>
+    <string name="sell_quantity">卖出数量(KB)</string>
+    <string name="available_cpu">可用CPU</string>
+    <string name="available_net">可用NET</string>
+    <string name="mortgage_cpu">抵押CPU</string>
+    <string name="mortgage_net">抵押NET</string>
+    <string name="redeem_the_cpu">赎回CPU</string>
+    <string name="redeem_the_net">赎回NET</string>
+    <string name="eos_resource_msg_title">EOS资源包括RAM(内存)，Network BandWidth(网络带宽)以及CPU BandWidth(CPU带宽)。</string>
+    <string name="eos_resource_msg_ram_title">RAM(内存)：</string>
+    <string name="eos_resource_msg_ram_msg">EOS链上需要RAM来存储数据,EOS的转账、买资源、抵押、赎回、投票等操作都需要消耗RAM(内存)资源,如果账户中RAM消耗殆尽,无法进行基本操作。</string>
+    <string name="eos_resource_msg_cpu_net_title">CPU Bandwidth &amp; NET BandWidth(CPU带宽 &amp; 网络带宽):</string>
+    <string name="eos_resource_msg_cpu_net_msg">CPU、网络带宽资源消耗的费率取决自过去三天消费的平均值。如果没有足够的CPU、网络 带宽资源,则无法使用EOS转账等基本功能。可以通过抵押的方式获取,也可以通过赎回操作,赎回抵押的带宽资源,赎回的资源会在三天之后(72小时后)进入账户。</string>
+    <string name="eos_resource_fail">获取EOS可用资源失败，请重试</string>
+    <string name="eos_input_amount">输入EOS数量</string>
+    <string name="eos_input_account">输入EOS账户名</string>
+    <string name="string_eos_transfer_amount_is_zero_res">数量需大于0</string>
+    <string name="eos_transfer_amount_erro_res">金额不正确</string>
+    <string name="eos_transfer_fail">转账失败</string>
+    <string name="eos_resource_list">订单信息</string>
+    <string name="eos_resource_pay_eos">花费EOS</string>
+    <string name="eos_resource_buy_ram">买入RAM</string>
+    <string name="eos_resource_sell_ram">卖出RAM</string>
+    <string name="eos_resource_from_account">发送账户</string>
+    <string name="eos_resource_to_account">接受账户</string>
+    <string name="eos_resource_memo">备注</string>
+    <string name="eos_resource_mortgage_CPU">抵押CPU</string>
+    <string name="eos_resource_mortgage_NET">抵押NET</string>
+    <string name="eos_resource_Redeem_CPU">赎回CPU</string>
+    <string name="eos_resource_Redeem_NET">赎回NET</string>
+    <string name="eos_resource_mortgage_memo_msg">CPU/NET抵押</string>
+    <string name="eos_resource_Redeem_memo_msg">CPU/NET赎回</string>
+    <string name="eos_resource_input_ram_kb">输入内存数量</string>
+    <string name="eos_resource_input_ram_kb_av">余额:</string>
+    <string name="eos_resource_input_is">余额不足</string>
+    <string name="eos_transfer_kb_erro_res">内存数量不正确</string>
+    <string name="eos_transfer_kb_too_low">购买数量过低</string>
+    <string name="eos_transfer_kb_sell_low">出售数量过低</string>
+    <string name="eos_balance_cpu_net">余额：</string>
+    <string name="eos_undelegateb_no_enough">余额不足</string>
+    <string name="rule_text">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`¬!"£$%^*()~=#{}[];':,./?/*-_+&#060;&#062;&#064;&#038;</string>
+    <string name="eos_transfer_to_address_erro">收款地址：账户名不存在</string>
+    <string name="eos_transfer_to_address_erro_re">接收地址：账户名不存在</string>
+
+
+    <string name="string_moving_brices_date">日期</string>
+    <string name="string_moving_brices_time">时间</string>
+    <string name="string_moving_brices_price">价格</string>
+    <string name="string_moving_brices_position">仓位</string>
+    <string name="string_moving_brices_month_rate">月收益率</string>
+    <string name="string_moving_brices_max_wd">最大回撤</string>
+    <string name="string_moving_close_auto">自动轮播关闭，再次点击可重新打开</string>
+    <string name="string_moving_eth_licai">ETH理财</string>
+    <string name="string_moving_btc_licai">BTC理财</string>
+    <string name="string_moving_usdt_licai">USDT理财</string>
+    <string name="string_click_quit">再按一次退出商城</string>
+    <string name="string_korean">한국어</string>
+    <string name="loading_msg">正在加载中&#8230;</string>
+    <string name="email_or_telephone">手机号</string>
+    <string name="please_input_the_email_address_or_telephone">请输入手机号</string>
+    <string name="intelligent_quantification">智能量化</string>
+    <string name="current_holding">当前持有</string>
+    <string name="quantitative_return_curve">量化收益曲线</string>
+    <string name="moving_brick_income_statement">量化收益表</string>
+    <string name="input">投入</string>
+    <string name="maximum_retracement">最大回撤:</string>
+    <string name="monthly_average_income">月均收益:</string>
+    <string name="blockchain_wallet">区块链钱包</string>
+    <string name="string_moving_zonghe_jinzhi">综合净值</string>
+    <string name="string_moving_6_months">近6个月</string>
+
+
+    <string name="you_have_not_started_quantitativefinance">您未开启理财！</string>
+    <string name="please_select_the_quantitative_banking_section_to_be_closed">请选择要关闭的理财栏目！</string>
+    <string name="closing_quantitative_financing">关闭理财</string>
+
+    <string name="string_setting_gift_package">新人大礼包</string>
+
+
+    <string name="yue_deng_yu">≈</string>
+    <string name="find">DApps</string>
+    <string name="application_recommendation">应用推荐</string>
+    <string name="goods_mall">好货商城</string>
+    <string name="digital_mall">D-BANK数字商城，百万商品等你购！</string>
+    <string name="good_luck_treasure_chest">好运宝箱</string>
+    <string name="deposit_dbm">以小博大，本金最高翻三倍</string>
+    <string name="mining_mobile_phone">挖矿手机</string>
+    <string name="block_chain_mining_mobile_phone">随身挖矿 赚钱无止境</string>
+    <string name="intelligent_finance">智能理财</string>
+    <string name="password_cannot_be_less_than_digits_login">登录密码不能少于8位</string>
+    <string name="password_cannot_be_less_than_digits_reg">交易密码不能少于8位</string>
+    <string name="goods_mall_title">DBMall</string>
+
+
+    <string name="string_socket_time_out">请求超时,请稍后重试~</string>
+    <string name="string_network_error_exception">网络异常，请检查后重试~</string>
+    <string name="string_ssl_error_title">证书验证失败~</string>
+    <string name="string_no_konw_erro">未知错误~</string>
+    <string name="string_json_data_erro">json数据解析错误~</string>
+    <string name="string_type_data_erro">类型转换错误~</string>
+    <string name="string_connect_fail">请求连接失败~</string>
+    <string name="string_login_fail">登录失败</string>
+    <string name="string_treasuer_box_activity_rules">活动规则</string>
+    <string name="string_treasuer_box_activity_rules_title">为回馈广大用户的支持与厚爱，现推出“好运宝箱”活动，具体规则如下：</string>
+    <string name="string_treasuer_box_activity_rules_title1">1.即存即开，DBM存入宝箱后原有层级的静态、动态收益均不变。</string>
+    <string name="string_treasuer_box_activity_rules_title2">2.即开即得，获奖DBM随即转入用户钱包余额。</string>
+    <string name="string_treasuer_box_activity_rules_title3">3.宝箱确认开启后不可撤销，赎回周期届满后，用户方可赎回存入宝箱的的加密货币。</string>
+    <string name="string_treasuer_box_activity_rules_excel">定存周期、定存数量与奖金表格。</string>
+
+
+    <string name="string_treasuer_box_open">开启宝箱</string>
+    <string name="string_treasuer_box_luck_list">幸运榜</string>
+    <string name="string_treasuer_box_luck">DBM幸运宝箱</string>
+    <string name="string_treasuer_box_msg">存入DBM开宝箱，最高开启三倍奖金!</string>
+    <string name="string_treasuer_box_luck_list_people">已有<xliff:g id="yyy">%s</xliff:g>人参与活动，共同瓜分1亿枚DBM</string>
+    <string name="string_treasuer_box_luck_list_your_ranking">您目前的排名为<xliff:g id="yyy">%s</xliff:g>名</string>
+    <string name="string_treasuer_box_my">我的宝箱</string>
+    <string name="string_treasuer_box_my_time">开启时间</string>
+    <string name="string_treasuer_box_my_box_amount">定存金额</string>
+
+    <string name="string_treasuer_box_my_date">赎回周期</string>
+    <string name="string_treasuer_box_my_amount">宝箱等级</string>
+    <string name="string_treasuer_box_my_winning_amount">奖金</string>
+
+    <string name="string_treasuer_box_my_is_winning">中奖概率</string>
+    <string name="string_treasuer_box_my_winning_price">中奖额度</string>
+    <string name="string_treasuer_box_my_winning_amount1">初级宝箱</string>
+    <string name="string_treasuer_box_my_winning_amount2">中级宝箱</string>
+    <string name="string_treasuer_box_my_winning_amount3">高级宝箱</string>
+    <string name="string_treasuer_box_my_winning_amount4">至尊宝箱</string>
+
+    <string name="string_treasuer_box_my_winning_is_winning1">60%中奖率</string>
+    <string name="string_treasuer_box_my_winning_is_winning2">70%中奖率</string>
+    <string name="string_treasuer_box_my_winning_is_winning3">80%中奖率</string>
+    <string name="string_treasuer_box_my_winning_is_winning4">90%中奖率</string>
+
+    <string name="string_treasuer_box_my_save_amount">存入数量</string>
+    <string name="string_treasuer_box_my_save_amount_5000">5千DBM</string>
+    <string name="string_treasuer_box_my_save_amount_10000">1万DBM</string>
+    <string name="string_treasuer_box_my_save_amount_30000">3万DBM</string>
+    <string name="string_treasuer_box_my_save_amount_50000">5万DBM</string>
+    <string name="string_treasuer_box_my_date1">3月</string>
+    <string name="string_treasuer_box_my_date2">6月</string>
+    <string name="string_treasuer_box_my_date3">9月</string>
+    <string name="string_treasuer_box_my_winning_price1">0.1%-100%</string>
+    <string name="string_treasuer_box_my_winning_price2">0.3%-200%</string>
+    <string name="string_treasuer_box_my_winning_price3">0.6%-300%</string>
+    <string name="string_treasuer_box_my_can_used">可用于开启宝箱的未定存</string>
+    <string name="string_treasuer_box_my_can_has_been_used">开启宝箱已定存资产</string>
+    <string name="string_treasuer_box_my_can_my_asset">我的宝箱资产</string>
+    <string name="string_treasuer_box_lottery_record">开奖记录</string>
+    <string name="string_treasuer_box_lottery_msg">您有1个宝箱待开启</string>
+    <string name="string_treasuer_box_winning_dialog_msg">恭喜您获得<xliff:g id="yyy">%s</xliff:g>DBM!</string>
+    <string name="string_treasuer_box_my_rank">排名</string>
+    <string name="string_treasuer_box_my_username">用户名</string>
+    <string name="string_treasuer_box_my_dbm">开启DBM幸运宝箱</string>
+    <string name="string_treasuer_box_my_lottory">奖励</string>
+    <string name="string_treasuer_save_dbm_title">开启DBM幸运宝箱</string>
+    <string name="string_treasuer_save_dbm_select_price">选择宝箱等级</string>
+    <string name="string_treasuer_save_dbm_danwei">单位:DBM</string>
+    <string name="string_treasuer_save_dbm_select_date">选择最高中奖额度</string>
+    <string name="string_treasuer_save_dbm_select_rules">幸运宝箱规则说明</string>
+    <string name="string_treasuer_save_dbm_save_sure">确认开启宝箱</string>
+    <string name="string_treasuer_save_dbm_chuji">初级宝箱</string>
+    <string name="string_treasuer_save_dbm_chuji_msg">(需存入5千DBM)</string>
+    <string name="string_treasuer_save_dbm_zhongji">中级宝箱</string>
+    <string name="string_treasuer_save_dbm_zhongji_msg">(需存入1万DBM)</string>
+    <string name="string_treasuer_save_dbm_gaoji">高级宝箱</string>
+    <string name="string_treasuer_save_dbm_gaoji_msg">(需存入3万DBM)</string>
+    <string name="string_treasuer_save_dbm_zhizun">至尊宝箱</string>
+    <string name="string_treasuer_save_dbm_zhizun_msg">(需存入5万DBM)</string>
+    <string name="string_treasuer_save_dbm_one_month">100%</string>
+    <string name="string_treasuer_save_dbm_three_month">200%</string>
+    <string name="string_treasuer_save_dbm_six_month">300%</string>
+    <string name="string_treasuer_save_dbm_sure_msgd_chuji">开启初级宝箱</string>
+    <string name="string_treasuer_save_dbm_sure_msgd_zhongji">开启中级宝箱</string>
+    <string name="string_treasuer_save_dbm_sure_msgd_gaoji">开启高级宝箱</string>
+    <string name="string_treasuer_save_dbm_sure_msgd_zhizun">开启至尊宝箱</string>
+    <string name="string_treasuer_save_dbm_six_get_month_three">3个月后可赎回</string>
+    <string name="string_treasuer_save_dbm_six_get_month_six">6个月后可赎回</string>
+    <string name="string_treasuer_save_dbm_six_get_month_nine">9个月后可赎回</string>
+    <string name="string_treasuer_save_dbm_sure_msg_max">(最高奖金<xliff:g id="yyy">%s</xliff:g>)</string>
+    <string name="string_treasuer_save_dbm_sure_save_amount_5000">需存入5千DBM，</string>
+    <string name="string_treasuer_save_dbm_sure_save_amount_10000">需存入1万DBM，</string>
+    <string name="string_treasuer_save_dbm_sure_save_amount_30000">需存入3万DBM，</string>
+    <string name="string_treasuer_save_dbm_sure_save_amount_50000">需存入5万DBM，</string>
+    <string name="string_treasuer_save_dbm_success">开启成功</string>
+    <string name="string_treasuer_save_dbm_res">兑换记录</string>
+    <string name="string_treasuer_turn_out_record">转出DBM记录</string>
+    <string name="string_treasuer_turn_out_msg">定存DBM未到期不可转出，到期后转出扣除%1本金1%作为手续费。</string>
+    <string name="string_treasuer_turn_out_amount_msg">投入金额</string>
+    <string name="string_treasuer_turn_out">转出</string>
+    <string name="string_treasuer_satrt_up_record">启动记录</string>
+    <string name="string_otc_title">51OTC</string>
+    <string name="string_otc_title_msg">安全便捷的数字货币场外交易平台</string>
+    <string name="string_wakuang_title_msg">D-BANK区块链挖矿手机，给您不一样的震撼体验！</string>
+    <string name="good_luck_treasure_title">DBM幸运宝箱</string>
+    <string name="good_luck_treasure_msg">存入DBM开宝箱，最高开启三倍奖金！</string>
+    <string name="string_treasuer_box_title">宝箱</string>
+    <string name="string_treasure_pwd_dialog">确认开启宝箱</string>
+    <string name="string_treasure_amount_no_enough">DBM矿池币总数量不足，请续投！</string>
+    <string name="string_treasure_open_fail">宝箱开启失败</string>
+    <string name="string_treasure_quick_set">立即续投</string>
+    <string name="lucky_treasure_chest">幸运宝箱 >></string>
+    <string name="already_invested">已投资</string>
+    <string name="no_investment">未投资</string>
+    <string name="business_partner_details">商业伙伴详情</string>
+    <string name="registration_time">注册时间:</string>
+    <string name="enter_the_transaction_password">输入交易密码</string>
+    <string name="insufficient_balance_recommended_use">余额不足？推荐使用</string>
+    <string name="buying_digital_currency">购买数字货币,</string>
+    <string name="recharge">立即充值></string>
+    <string name="otc_text">51otc.io</string>
+    <string name="string_treasure_open_no_prize">这个宝箱没中奖，再开一个试试！</string>
+    <string name="redemption_time">赎回时间:</string>
+    <string name="open_lucky_box">开启幸运宝箱</string>
+    <string name="close_ucky_box">关闭幸运宝箱</string>
+    <string name="lucky_treasure_chest_title">幸运宝箱</string>
+
+    <string name="lucky_treasure_chest_my_box_title">宝箱等级</string>
+    <string name="lucky_treasure_chest_my_box_amount">最高额度</string>
+
+
+    <string name="string_treasuer_save_dbm_mini">Mini宝箱</string>
+    <string name="string_treasuer_save_dbm_mini_msg">(需存入2千DBM)</string>
+    <string name="string_treasuer_box_my_save_amount_2000">2千DBM</string>
+    <string name="string_treasuer_box_my_winning_is_winning0">50%中奖率</string>
+    <string name="string_treasuer_save_dbm_sure_msgd_mini">开启Mini宝箱</string>
+    <string name="string_treasuer_save_dbm_sure_save_amount_2000">需存入2千DBM，</string>
+
+    <string name="string_dbmall_novigation_dbmall">首页</string>
+    <string name="string_dbmall_novigation_order">订单</string>
+    <string name="string_dbmall_novigation_shopping_cart">购物车</string>
+    <string name="string_dbmall_novigation_my_cash_back">我</string>
+    <string name="string_dbmall_novigation_dbm_price">DBM价：</string>
+    <string name="string_dbmall_novigation_cash_back">购物返现：</string>
+    <string name="string_dbmall_novigation_originalPrice">原价：</string>
+    <string name="string_dbmall_novigation__sales">销量</string>
+    <string name="string_dbmall_novigation_points">积分</string>
+    <string name="string_dbmall_novigation_big_name">大牌正品</string>
+    <string name="string_dbmall_novigation_factory_price">工厂价格</string>
+    <string name="string_dbmall_novigation_buy_done">一站购齐</string>
+    <string name="string_dbmall_novigation_100_cash_back">购物返现</string>
+    <string name="string_dbmall_novigation_release_refresh">松开刷新</string>
+    <string name="string_dbmall_novigation_refreshing">正在刷新</string>
+    <string name="string_dbmall_novigation_pull_down_to_refresh">下拉刷新</string>
+    <string name="string_dbmall_search_title">搜好物</string>
+    <string name="string_no_more_data">没有更多数据了</string>
+    <string name="string_search_no_coin">未找到搜索结果</string>
+    <string name="string_dbmall_title">让购物更便捷</string>
+    <string name="string_dbmall_my_order_title">我的订单</string>
+    <string name="string_dbmall_cancel">取消</string>
+
+
+    <string name="huo_qi_bao">活期宝</string>
+    <string name="dbm_finance">DBM挖矿</string>
+    <string name="dbnak_intelligent_mining_mobile_phone_pro">D-BANK智能挖矿手机Pro</string>
+    <string name="first_multi_currency_mining_machine">全球首款多币种矿机，超高挖矿收益</string>
+    <string name="string_dbmall_title_msg">大牌正品、购物返现、一站购齐</string>
+    <string name="string_phone_title">D-BANK智能挖矿手机预售</string>
+    <string name="string_dbmall_click_again">没有数据，点击重试</string>
+    <string name="string_box_select_type">选择宝箱类型</string>
+
+    <string name="string_box_btc_lh">BTC量化</string>
+    <string name="string_box_eth_lh">ETH量化</string>
+    <string name="string_box_usdt_lh">稳定币理财</string>
+    <string name="string_box_dbm_hb">DBM活期宝</string>
+    <string name="string_box_dbm_yubao">DBM余额宝</string>
+
+    <string name="string_box_100_dbm">100%DBM</string>
+    <string name="string_box_200_dbm">200%DBM</string>
+    <string name="string_box_300_dbm">300%DBM</string>
+
+    <string name="string_box_200_usd">2百美金</string>
+
+    <string name="string_box_500_usd">5百美金</string>
+
+    <string name="string_box_1000_usd">1千美金</string>
+
+    <string name="string_box_3000_usd">3千美金</string>
+
+    <string name="string_box_5000_usd">5千美金</string>
+    <string name="string_box_need_200_usd">(价值2百美金)</string>
+    <string name="string_box_need_500_usd">(价值5百美金)</string>
+    <string name="string_box_need_1000_usd">(价值1千美金)</string>
+    <string name="string_box_need_3000_usd">(价值3千美金)</string>
+    <string name="string_box_need_5000_usd">(价值5千美金)</string>
+
+    <string name="string_box_need_200_usd_box">需宝箱存入2百美金</string>
+    <string name="string_box_need_500_usd_box">需宝箱存入5百美金</string>
+    <string name="string_box_need_1000_usd_box">需宝箱存入1千美金</string>
+    <string name="string_box_need_3000_usd_box">需宝箱存入3千美金</string>
+    <string name="string_box_need_5000_usd_box">需宝箱存入5千美金</string>
+
+    <string name="string_phone_verification_title">手机号验证</string>
+    <string name="string_phone_verification_number">手机号</string>
+    <string name="string_phone_verification_code">验证码</string>
+    <string name="string_phone_verification_enter_sms_code">请输入验证码</string>
+    <string name="string_phone_verification_enter_code">请输入验证码</string>
+
+    <string name="string_phone_verification_send_code">发送验证码</string>
+    <string name="string_phone_verification_enter_phone_number">请输入手机号</string>
+    <string name="string_phone_verification_enter_phone_number_error">手机号格式错误，请重新输入！</string>
+    <string name="string_phone_verification_enter_code_error">验证码错误，请重新输入！</string>
+    <string name="string_phone_verification_resend">重新发送</string>
+    <string name="string_phone_verification_check_error">手机号验证码错误，请重新输入</string>
+    <string name="string_phone_verification_check_right">手机号验证通过！</string>
+    <string name="string_phone_verification_sms_send">短信已发出</string>
+
+    <string name="string_phone_verification_enter_ver_code">请输入以下验证码</string>
+    <string name="string_phone_verification_can_t_see_clearly">看不清，换一张</string>
+    <string name="string_phone_verification_get_image_fail">获取图片验证码失败，请点击重试</string>
+    <string name="string_yu_e_bao">余额宝</string>
+    <string name="string_yu_e_bao_new">余额宝</string>
+    <string name="string_box_amount_no_enough">幸运宝箱余额不足，请续投！</string>
+    <string name="daily_income">当日收益</string>
+    <string name="total_number_of_balance_treasures">余额宝总数量</string>
+    <string name="annual_rate_of_return">年收益率</string>
+    <string name="transfer_out">转出</string>
+    <string name="transfer">转入</string>
+    <string name="lucky_treasure_chest_record">幸运宝箱记录</string>
+    <string name="yu_e_bao_detail">明细</string>
+    <string name="available_alance">可用余额:</string>
+    <string name="yue_zhuanru_yuebao">余额已自动转入余额宝，随存随取，免手续费 >></string>
+    <string name="exchange_record_new">兑换记录</string>
+    <string name="tick_record_new">提币记录</string>
+    <string name="find_real_estate_monopoly">地产大富翁</string>
+    <string name="find_real_estate_msg">基于区块链随机数的圈地理财游戏</string>
+    <string name="btc_lianghua">BTC量化</string>
+    <string name="eth_lianghua">ETH量化</string>
+    <string name="usdb_lianghua">USDB量化</string>
+    <string name="usdt_lianghua">USDT量化</string>
+    <string name="btc_zhineng_lianghua">BTC智能量化</string>
+    <string name="eth_zhineng_lianghua">ETH智能量化</string>
+    <string name="usdb_zhingneng_lianghua">稳定币理财</string>
+    <string name="opened">已开启</string>
+    <string name="unopened">未开启</string>
+    <string name="jijiang_kaifang">即将开放</string>
+    <string name="wendingbi_financial_management">稳定币理财</string>
+    <string name="wendingbi_total_num">稳定币总数量</string>
+    <string name="usdt_prompt_receive">请勿向上述地址充值非ERC20 USDT资产。</string>
+    <string name="usdt_prompt_pay">请勿向非USDT ERC20地址转账。</string>
+    <string name="ordinary_transfer">普通转账</string>
+    <string name="collection_merchant">收款商家：</string>
+    <string name="collection_merchant_new">收款商家</string>
+    <string name="remarks_optional">备注(选填)</string>
+    <string name="confirm_payment">确认支付</string>
+    <string name="ren_min_bi_text">人民币</string>
+    <string name="han_yuan_text">韩元</string>
+    <string name="mei_yuan_text">美元</string>
+    <string name="usdb_text">USDB</string>
+    <string name="payment_successful">支付成功</string>
+    <string name="dbpay_merchant">DBPay 商家</string>
+    <string name="shop_name">商家名称：</string>
+    <string name="settlement_method">结算方式：</string>
+    <string name="payment_method">收款方式：</string>
+    <string name="prepayment_remaining">预付款剩余：</string>
+    <string name="statement">对账单</string>
+    <string name="scan_qr_code_payment">扫描二维码付款</string>
+    <string name="advance_payment">预付款充值</string>
+    <string name="xiao_hao_one">,本次交易需消耗</string>
+    <string name="xiao_hao_two"></string>
+    <string name="pending_settlement">待结算：</string>
+    <string name="repurchase_balance">回购余额宝转入</string>
+    <string name="repurchase_balance_baby_box">回购余额宝宝箱</string>
+    <string name="repurchase_balance_transferred">回购余额转入</string>
+    <string name="repurchase_of_live_treasures">回购活期宝转入</string>
+    <string name="buy_back_live_baby_box">回购活期宝宝箱</string>
+    <string name="repo_closed">回购关闭</string>
+    <string name="sound_switch">音效开关</string>
+    <string name="monopoly_land_nclosure">大富翁圈地 -</string>
+    <string name="monopoly_refund">大富翁退款 +</string>
+    <string name="string_real_estate_monopoly_rich_list">富翁榜</string>
+    <string name="string_real_estate_monopoly_exchange">交易所</string>
+    <string name="string_real_estate_monopoly_my_estate">我的地产</string>
+    <string name="string_real_estate_monopoly_select_player_identity">选择玩家身份</string>
+    <string name="string_real_estate_monopoly_choose_land_property_rights">选择产权期限</string>
+    <string name="string_real_estate_monopoly_buy_1_piece_of_land">购买1块地</string>
+    <string name="string_real_estate_monopoly_buy_5_piece_of_land">购买5块地</string>
+    <string name="string_real_estate_monopoly_buy_10_piece_of_land">购买10块地</string>
+    <string name="string_real_estate_monopoly_15_days_of_property_rights_text">产权</string>
+    <string name="string_real_estate_monopoly_need_to_pay_dbm">价值</string>
+    <string name="string_real_estate_monopoly_purchase_tax">购置税：</string>
+    <string name="string_real_estate_monopoly_expected_daily_income">预计每日收益</string>
+    <string name="string_real_estate_monopoly_rule_title">地产大富翁规则：</string>
+    <string name="string_real_estate_monopoly_property_rights">产权期限</string>
+    <string name="string_real_estate_monopoly_property_rights_90">永久</string>
+    <string name="string_real_estate_monopoly_real_estate_yield">地产收益率</string>
+    <string name="string_real_estate_monopoly_maximum_number_of_winnings">中签次数上限</string>
+    <string name="string_real_estate_monopoly_dizhu">地主:</string>
+    <string name="string_real_estate_monopoly_remaining_number_of_shakes">今日剩余摇号次数：</string>
+    <string name="string_real_estate_monopoly_shake_rule_title">摇号中签规则</string>
+    <string name="string_real_estate_monopoly_shakes_error">摇号失败，请重试</string>
+    <string name="string_real_estate_monopoly_p_id"><xliff:g id="yyy">%d</xliff:g>号地:</string>
+    <string name="string_real_estate_monopoly_block_id">区块链编码:</string>
+    <string name="string_real_estate_monopoly_chuanquan">产权:</string>
+    <string name="string_real_estate_monopoly_cq_day"><xliff:g id="yyy">%d</xliff:g>天</string>
+    <string name="string_real_estate_monopoly_cq_time"><xliff:g id="yyy">%s</xliff:g>次</string>
+    <string name="string_real_estate_monopoly_di_price">地价:</string>
+    <string name="string_monopoly_rich_rank">排名</string>
+    <string name="string_monopoly_rich_player">玩家</string>
+    <string name="string_monopoly_rich_level">级别</string>
+    <string name="string_monopoly_rich_yestoday_income">昨日收益</string>
+    <string name="string_monopoly_rich_own_real_estate">拥有地产</string>
+    <string name="string_monopoly_my_property_player">玩家:</string>
+    <string name="string_monopoly_my_property_used_pro">拥有地块:</string>
+    <string name="string_monopoly_my_property_price">总价值:</string>
+    <string name="string_monopoly_my_property_pro_slot_all">昨日摇号公示</string>
+    <string name="string_monopoly_my_property_pro_income">昨日地产收益:</string>
+    <string name="string_monopoly_my_property_slot_income">昨日摇号收益:</string>
+    <string name="string_monopoly_my_property_zhidi_update">置地升级</string>
+    <string name="string_real_estate_monopoly_slot_land_id">中签<xliff:g id="yyy">%d</xliff:g>号地</string>
+    <string name="string_real_estate_monopoly_slot_land_id_gonggun">中签公共场所</string>
+    <string name="string_real_estate_monopoly_slot_land_id_baoddi">中签宝地</string>
+    <string name="string_real_estate_monopoly_slot_result_msg_baodi">恭喜你摇中宝地</string>
+    <string name="string_real_estate_monopoly_slot_result_msg_gongdi">恭喜你摇中公地</string>
+    <string name="string_real_estate_monopoly_slot_result_msg_myself">恭喜你摇中自己的<xliff:g id="yyy">%d</xliff:g>号地</string>
+    <string name="string_real_estate_monopoly_slot_result_msg_other">摇中<xliff:g id="yyy">%d</xliff:g>号地</string>
+    <string name="string_real_estate_monopoly_slot_result_msg_fee">获得奖金</string>
+    <string name="string_real_estate_monopoly_buy_success">圈地订单已提交！</string>
+    <string name="string_monopoly_slot_notice">摇号公告：</string>
+    <string name="string_monopoly_guide_text_hr">成为大富翁的第一步：圈地！</string>
+    <string name="string_monopoly_guide_text_slot">大富翁每天摇号才能获得收益哦！</string>
+    <string name="string_monopoly_slot_msg1">请您圈地后再来摇号！</string>
+    <string name="string_monopoly_slot_msg2">太棒了，您今日摇号任务已完成！</string>
+    <string name="string_monopoly_sloting">正在摇号中,请稍后&#8230;</string>
+    <string name="press_again_to_exit_the_program_slot">再按一次退出摇号</string>
+    <string name="string_monopoly_block">块</string>
+    <string name="string_monopoly_buy_land_ing">圈地交易进行中&#8230;</string>
+    <string name="string_monopoly_buy_land_order_list">正在创建订单&#8230;</string>
+    <string name="string_monopoly_splash_play">开始游戏</string>
+    <string name="string_monopoly_splash_select_zone">请选择一个区后，再开始游戏</string>
+    <string name="coming_soon_so_stay_tuned">即将开放，敬请期待!</string>
+    <string name="player">玩家:</string>
+    <string name="grade">等级:</string>
+    <string name="number_of_enclosures">圈地数:</string>
+    <string name="total_value_all">总价值:</string>
+    <string name="remaining_number_of_shakes_today">今日剩余摇号次数:</string>
+    <string name="cumulative_number_of_shakes">累计摇号次数:</string>
+    <string name="real_estate_income_yesterday">昨日地产收益:</string>
+    <string name="accumulated_property_income">累计地产收益:</string>
+    <string name="yesterday_yaohao_earnings">昨日摇号收益:</string>
+    <string name="cumulative_lottery_income">累计摇号收益:</string>
+    <string name="yesterdays_guild_gains">昨日公会收益:</string>
+    <string name="game_guild_number">游戏公会人数:</string>
+    <string name="enclosure_property_rights">圈地产权</string>
+    <string name="shake_income">摇号收益</string>
+    <string name="rocking_record">摇号记录</string>
+    <string name="gaming_strategy">游戏攻略</string>
+    <string name="exit_the_game">退出游戏</string>
+    <string name="daily_rate_of_return_new">日收益率:</string>
+    <string name="current_land_price">当前地价:</string>
+    <string name="buy_land_price">买入地价:</string>
+    <string name="blockchain_coding">区块链编码:</string>
+    <string name="expire_date">到期时间:</string>
+    <string name="enclosure_time">圈地时间:</string>
+    <string name="renewal">续期</string>
+    <string name="upgrade">升级</string>
+    <string name="ming_ming">命名</string>
+    <string name="zhuan_rang">转让</string>
+    <string name="update_successed">升级成功</string>
+    <string name="renewal_success">续期成功</string>
+    <string name="named_successfully">命名成功</string>
+    <string name="successful_transfer">转让成功</string>
+    <string name="treasure_bonus">宝地奖金</string>
+    <string name="hao_dichan_shouyi">号地产收益</string>
+    <string name="unshaken_toll_income_is_invalid">号地未摇号通行费收益作废</string>
+    <string name="toll_income">号地通行费收益</string>
+    <string name="toll_income_po_chan">号地通行费收益(对方已破产)</string>
+    <string name="ground_shakes_the_treasure_land">号地摇中宝地</string>
+    <string name="shake_the_commons">号地摇中公地</string>
+    <string name="hao_di_one">号地摇中</string>
+    <string name="hao_di">号地</string>
+    <string name="string_real_estate_monopoly_tab_title">地产大富翁</string>
+    <string name="string_real_estate_monopoly">地产大富翁</string>
+    <string name="string_real_estate_monopoly_enclosure">圈地</string>
+    <string name="string_real_estate_monopoly_rocking_number">摇号</string>
+    <string name="string_real_estate_monopoly_happy_race_map">跑马圈地图</string>
+    <string name="string_real_estate_monopoly_happy_race">跑马圈地</string>
+    <string name="string_real_estate_monopoly_landlord">地主</string>
+    <string name="string_real_estate_monopoly_rich_person">财主</string>
+    <string name="string_real_estate_monopoly_tu_hao">土豪</string>
+    <string name="string_real_estate_monopoly_confirm_enough_to_buy">确认购买</string>
+    <string name="string_real_estate_monopoly_daily_shake">每日摇号</string>
+    <string name="string_real_estate_monopoly_shake_number_publicity">摇号公示</string>
+    <string name="string_real_estate_monopoly_blockchain_shake">区块链摇号</string>
+    <string name="string_real_estate_monopoly_start_rocking">开始摇号</string>
+    <string name="string_monopoly_my_property_happy_race_record">圈地产权</string>
+    <string name="string_monopoly_my_property_slot_record">摇号记录</string>
+    <string name="string_monopoly_my_property_income_record">地产收益</string>
+    <string name="string_monopoly_my_property_slot_income_title">摇号收益</string>
+    <string name="string_monopoly_my_property_game_friend">游戏好友</string>
+    <string name="string_monopoly_my_property_gaming_strategy">游戏攻略</string>
+    <string name="string_monopoly_my_property_gaming_strategy1">地产命名</string>
+    <string name="string_monopoly_my_property_gaming_strategy2">地产转让</string>
+    <string name="string_monopoly_my_property_gaming_strategy3">升级</string>
+    <string name="string_monopoly_my_property_gaming_strategy4">游戏攻略</string>
+    <string name="string_monopoly_my_property_gaming_strategy5">交易密码</string>
+    <string name="string_monopoly_my_property_gaming_strategy6">中签</string>
+    <string name="string_monopoly_my_property_gaming_strategy7">延长产权</string>
+    <string name="string_damall_no_pay">현재 주문이 만료되어 지불 할 수 없습니다.</string>
+    <string name="real_estate_income">地产收益</string>
+    <string name="smart_link_revenue">智能链接收益</string>
+    <string name="real_estate_link_income">地产链接收益</string>
+    <string name="node_link_revenue">节点链接收益</string>
+    <string name="executive_commission">高管佣金</string>
+    <string name="trading_commissions">交易佣金</string>
+    <string name="total_revenue_today">今日总收益</string>
+    <string name="the_node_application_was_submitted_successfully">节点申请提交成功！</string>
+    <string name="bq_brvah_load_end">没有更多数据</string>
+    <string name="bq_brvah_load_failed">加载失败，请点我重试</string>
+    <string name="bq_brvah_loading">正在加载中&#8230;</string>
+    <string name="please_select_the_property_time">请选择产权时间</string>
+    <string name="please_enter_the_other_party_account">请输入对方账号</string>
+    <string name="please_enter_the_name_of_the_property">请输入地产名字</string>
+    <string name="current_land_price_new">当前地价</string>
+    <string name="upgrade_the_land_price_to">升级地价至</string>
+    <string name="kuai_text">块</string>
+    <string name="dbm_average_price_yesterday">DBM昨日均价:</string>
+
+    <string name="shopping_cart">购物车</string>
+    <string name="management">管理</string>
+    <string name="your_shopping_cart_is_empty">您的购物车空空如也，快快选购吧</string>
+    <string name="select_all">全选</string>
+    <string name="he_ji">合计：0USDB</string>
+    <string name="he_ji_new">合计：<xliff:g id="yyy">%s</xliff:g>USDB</string>
+    <string name="jie_suan">结算(0)</string>
+    <string name="please_select_the_item_to_delete">请选择要删除的商品</string>
+    <string name="please_select_the_item_to_be_settled">请选择要结算的商品</string>
+    <string name="whether_to_remove_the_item">是否确认将已选中的<xliff:g id="yyy">%s</xliff:g>件商品删除？</string>
+    <string name="the_baby_can_be_reduced">该宝贝不能减少了呦~</string>
+    <string name="delete">删除</string>
+    <string name="settlement">结算</string>
+    <string name="quan_bu">全部</string>
+    <string name="wei_fu_kuan">未付款</string>
+    <string name="dai_fa_huo">待发货</string>
+    <string name="dai_shou_huo">待收货</string>
+    <string name="yi_wan_cheng">已完成</string>
+    <string name="yi_qu_xiao">已取消</string>
+    <string name="my_order">我的订单</string>
+    <string name="there_are_no_orders_at_this_time">暂时没有订单哦</string>
+    <string name="are_you_sure_you_want_to_cancel_the_order">确定要取消订单吗?</string>
+    <string name="determine_the_receipt">确定收货吗?</string>
+    <string name="my_cash_back">我的返现</string>
+    <string name="cashback_instructions">返现说明</string>
+    <string name="to_return_the_dbm">待返现DBM:</string>
+    <string name="dbn_has_been_returned">已返现DBM:</string>
+    <string name="cash_back_points">已返现积分:</string>
+    <string name="point_balance">积分余额:</string>
+    <string name="today_is_link_back">今日链接返现:</string>
+    <string name="cash_back_record">返现记录:</string>
+    <string name="my_scores">我的积分</string>
+    <string name="point_balance_new">积分余额</string>
+    <string name="point_record">积分记录</string>
+    <string name="link_cashback">链接返现</string>
+
+
+
+    <!-- 闪兑 -->
+    <string name="string_coin_exchange_title">闪兑</string>
+    <string name="string_coin_exchange_btn_text">闪电兑换</string>
+    <string name="string_coin_exchange_vip_text">手续费：<xliff:g id="yyy">%s</xliff:g>DBM(VIP减免<xliff:g id="yyy">%s</xliff:g>)</string>
+    <string name="string_coin_exchange_vip_text_other_coin">(VIP减免<xliff:g id="yyy">%s</xliff:g>)</string>
+
+    <string name="string_coin_exchange_dialog_title">手续费明细</string>
+    <string name="string_coin_exchange_dialog_amount">金额：</string>
+    <string name="string_coin_exchange_dialog_gas">手续费：</string>
+    <string name="string_coin_exchange_dialog_vip">VIP减免：</string>
+    <string name="string_coin_exchange_dialog_calculation_formula">计算公式：</string>
+    <string name="string_coin_exchange_dialog_gas_rules">手续费规则</string>
+    <string name="string_instant_exchange_price">参考报价</string>
+    <string name="string_instant_exchange_send_amount">转出数量</string>
+    <string name="string_instant_exchange_receive_amount">收到数量</string>
+    <string name="string_instant_exchange_all">全部兑换</string>
+    <string name="string_instant_exchange_rate">汇率</string>
+    <string name="string_no_suppot_syambl">无法切换，<xliff:g id="yyy">%s</xliff:g>暂不支持兑换其他币种</string>
+    <string name="string_instant_exchange_rate_fail">获取汇率失败,正在重新获取</string>
+    <string name="string_application_node">快捷申请节点</string>
+    <string name="string_dbmbp_block_browser">DBMBP区块浏览器</string>
+    <string name="string_application_node_list">申请节点兑换DBM</string>
+    <string name="string_upgrade_miner">升级矿机兑换DBM</string>
+    <string name="string_miner_update_successed">矿机升级成功</string>
+    <string name="string_block_reward">出块奖励</string>
+    <string name="string_lh_dialog_title">D-BANK云节点</string>
+    <string name="string_lh_dialog_content">快捷申请云节点，日收益率0.4%，获得超级节点投票权！</string>
+    <string name="string_lh_dialog_btn_text">立即申请</string>
+    <string name="string_lh_dialog_lost">下次再说</string>
+    <string name="string_dbm_tibi">矿机提币</string>
+    <string name="string_dbm_transfer_out">提币</string>
+    <string name="string_dbm_transfer_out_address">提币地址:</string>
+    <string name="string_dbm_transfer_out_amount">提币数量:</string>
+    <string name="string_dbm_transfer_out_address_input">请输入提币地址</string>
+    <string name="string_dbm_transfer_out_amount_input">请输入提币数量</string>
+    <string name="string_dbm_transfer_out_fee">手续费:</string>
+    <string name="string_dbm_transfer_out_pwd">交易密码:</string>
+
+    <string name="string_exchagne_is_closed">兑换功能已下线，请使用DAPP闪兑D-Swap</string>
+    <string name="string_qx_updating">升级维护中,暂停投入功能</string>
+    <string name="string_tx_convertible_quantity">已超出最大提币数量</string>
+    <string name="string_dbm_transfer_out_success">提币成功</string>
+    <string name="string_node">节点挖矿</string>
+
+    <string name="string_verified">实名认证</string>
+    <string name="string_verified_verified">已认证</string>
+    <string name="string_verified_no_verified">未认证</string>
+    <string name="string_verified_under_review">审核中</string>
+    <string name="string_verified_failed">认证失败</string>
+    <string name="string_verified_failed_msg">认证失败：手持证件照不符合规范</string>
+
+    <string name="string_verified_upload_id_card">上传身份证</string>
+    <string name="string_verified_enter_your_name">请输入你的姓名</string>
+    <string name="string_verified_enter_your_id_card">请输入你的身份证号</string>
+    <string name="string_verified_protrait_photo">上传身份证-正面照片</string>
+    <string name="string_verified_back_photo">上传身份证-背面照片</string>
+    <string name="string_verified_clear_text">（文字清晰，四角齐全）</string>
+    <string name="string_verified_hand_held_documents">上传身份证-手持证件照片</string>
+    <string name="string_verified_hand_held_documents_need_clear">（本人手持露脸、五官、证件信息清晰可见）</string>
+    <string name="string_verified_refer_to_this_picture">请参考此图</string>
+    <string name="string_verified_photographing_a_hand_held_id">拍摄手持证件照</string>
+    <string name="string_ok">我知道了</string>
+    <string name="string_uploading">上传中&#8230;</string>
+    <string name="string_uploading_success">上传成功</string>
+    <string name="string_summit_success">提交成功</string>
+    <string name="string_choose_title">选择一个方式</string>
+    <string name="string_choose_carmera">拍照</string>
+    <string name="string_choose_phote">相册选择</string>
+    <string name="string_ple_verified_protrait_photo">请上传身份证正面照片</string>
+    <string name="string_ple_verified_back_photo">请上传身份证背面照片</string>
+    <string name="string_ple_verified_hand_held_documents">请上传身份证手持证件照片</string>
+    <string name="string_verified_uploading_img">正在上传图片中,请稍后&#8230;</string>
+    <string name="string_verified_uploading_msg">正在提交信息,请稍后&#8230;</string>
+    <string name="string_bind_phone_number">绑定手机号</string>
+    <string name="string_choose_country">选择国家码</string>
+    <string name="string_safe_verified_">安全验证</string>
+    <string name="string_account">账号</string>
+    <string name="string_no_bind">未绑定</string>
+    <string name="string_id_card_erro">请输入有效的身份证号码！</string>
+    <string name="string_name_erro">姓名校验失败</string>
+    <string name="string_ver_ing">实名认证审核中,请审核通过后再来操作。</string>
+    <string name="string_tx_pwd">交易密码</string>
+    <string name="string_dbm_transfer_out_gas">交易燃料：</string>
+    <string name="string_coin_airdrop">空投</string>
+
+    <string name="string_introduce_title_one">好货商城</string>
+    <string name="string_introduce_title_content_one">大牌正品，一站购齐</string>
+
+    <string name="string_introduce_title_two">购物返现</string>
+    <string name="string_introduce_title_content_two">便捷购物，积分返现</string>
+
+    <string name="string_introduce_title_three">广告流量变现</string>
+    <string name="string_introduce_title_content_three">邀请好友投票，躺着把钱赚</string>
+
+</resources>

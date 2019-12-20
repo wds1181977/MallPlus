@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/notice_carde_view_text_color" />
+    <stroke
+        android:height="3dp"
+        android:color="@color/color_monoply_slot_text_color"
+        />
+
+    <corners android:radius="5dp" />
+
+</shape>

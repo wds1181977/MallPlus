@@ -1,0 +1,43 @@
+<html>
+<title>����齱����</title>
+<head>
+    <meta http-equiv=Content-Type content="text/html; charset=uft-8">
+</head>
+<style> 
+#oknum{ margin:0 auto; width:400px; height:100px; } 
+body {font-family: Arial;color:#fff;margin: 0px;padding: 0px;background:#000;text-align:center;}
+
+</style>
+<script type="text/javascript">
+	
+	var min = 1;
+	var max = 37;
+	var timer
+	function change(){
+		document.getElementById("oknum").innerHTML = "<h2>"+ GetRnd(min,max);+"</h2>"
+	}
+	function start(){
+		clearInterval(timer);
+		timer = setInterval('change()',10);
+	}e
+	function ok(){
+	clearInterval(timer);
+	}
+	function GetRnd(min,max){
+		return Math.floor(Math.random()*max+1);;
+	}
+	function callJS(a){
+      alert("Android调用了JS的callJS方法"+a);
+   }
+
+</script>
+<body>
+
+
+</body>
+
+<button onclick="start()" accesskey="s" style="width:100px;height:30px">��ʼ</button>
+<button onclick="ok()" accesskey="o" style="width:100px;height:30px">ֹͣ</button>
+��ϲ��
+<div id="oknum" name="oknum" style="font-size:150px"></div>
+</html>

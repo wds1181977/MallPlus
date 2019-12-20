@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="line">
+    <!-- 显示虚线，破折线的宽度为dashWith，空隙的宽度为dashGap, darkgray -->
+    <stroke
+        android:width="@dimen/dp1"
+        android:color="@color/color_line_fenge"
+        android:dashWidth="@dimen/dp2"
+        android:dashGap="@dimen/dp3" />
+    <size android:height="@dimen/dp1" />
+</shape>

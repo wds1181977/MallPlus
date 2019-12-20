@@ -1,0 +1,11 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="zxing_app_name">Zxing Library</string>
+    <!--zxing-->
+    <string name="msg_camera_framework_bug">相机被占用或没有相机权限，请检查</string>
+    <string name="button_ok">물러나다</string>
+    <string name="scan_code">일소하다</string>
+    <string name="open_flash">플래시를 켜다</string>
+    <string name="close_flash">플래시 끄기</string>
+    <string name="gallery">앨범</string>
+    <string name="scan_failed_tip">图片解析失败，换个图片试试.</string>
+</resources>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-3.3.1.js"></script>
+
+    <!--钱包生成地址、密钥-->
+    <script src="../Plugins/ethersjs/ethers-v3.min.js"></script>
+
+    <!--引入js 加密解密文件-->
+    <script src="../Plugins/CryptoJS/crypto-js.js"></script>
+
+    <!--引入md5js 加密文件-->
+    <script src="../Plugins/md5/md5.js"></script>
+
+    <!--引入crypto-api-0.0.1.js 文件-->
+    <script src="../Public/js/crypto-api-0.0.1.js"></script>
+
+</head>
+
+<body>
+
+<!--备份：导出keystore-->
+
+<script>
+
+            // 定义的全局变量
+            var TransError='';
+
+            // 通过私钥导出keystore
+            function export_keystroe(address, privateKey_enc, password) {
+                console.log("export_keystroe---: " + address+","+privateKey_enc+","+password);
+                // 判断参数
+                if (!address || !password || !privateKey_enc) {
+                    TransError = '参数有误~';
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: TransError, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+                }
+
+                // 引入核心模块
+                var Wallet = ethers.Wallet;
+
+                // 解密私钥
+                var privateKey = Decrypt(privateKey_enc, password);
+                console.log('privateKey: ' + privateKey);
+                if (!privateKey){
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: errorMsg, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+
+                }
+
+                // 初始化私钥,并判断地址是否一样
+                var wallet = new Wallet(privateKey);
+                console.log('Address: ' + wallet.address.toLocaleLowerCase());
+                console.log('AddressLOW: ' + address.toLocaleLowerCase());
+                if (wallet.address.toLocaleLowerCase() != address.toLocaleLowerCase()){
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: '钱包地址有误，请联系客服~', info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+
+                }
+
+                // 导出json
+                var encryptPromise = wallet.encrypt(password, callback);
+                function callback(percent) {
+                    console.log("Encrypting: " + parseInt(percent * 100) + "% complete");
+                    Interactive.keyStorePro(parseInt(percent * 100));
+                }
+                encryptPromise.then(function(json) {
+                    console.log(json);
+                    /*交互app*/
+                    var dataJson = {status: true, type : 1, msg: 'keystore信息~', info: json};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return true;
+
+                });
+            }
+
+            // 通过解密 加密过的助记词导出助记词
+            function export_mnemonic(address, mnemonic_enc, password) {
+
+                // 判断参数
+                if (!address || !password || !mnemonic_enc) {
+                    TransError = '参数有误~';
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: TransError, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+                }
+
+                // 引入核心模块
+                var Wallet = ethers.Wallet;
+
+                // 解密私钥
+                var mnemonic = Decrypt(mnemonic_enc, password);
+                console.log('Mnemonic: ' + mnemonic);
+                if (!mnemonic){
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: errorMsg, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+
+                }
+
+                // 初始化助记词,并判断地址是否一样
+                /* 根据助记词生成地址 */
+                var wallet = new Wallet.fromMnemonic(mnemonic);
+                console.log('Address: ' + wallet.address.toLocaleLowerCase());
+                console.log('AddressLOW: ' + address.toLocaleLowerCase());
+                if (wallet.address.toLocaleLowerCase() != address.toLocaleLowerCase()){
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: '钱包地址有误，请联系客服~', info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+
+                }
+                /*交互app*/
+                var dataJson = {status: true, type : 2, msg: 'mnemonic信息~', info: mnemonic};
+                console.log("dataArr: " + JSON.stringify(dataJson));
+                Interactive.transFerEth(JSON.stringify(dataJson));
+                return true;
+
+            }
+
+            // 通过加密私钥导出私钥privateKey
+            function export_privateKey(address, privateKey_enc, password) {
+
+                console.log("=========: " + address+"="+privateKey_enc+"="+password);
+                // 判断参数
+                if (!address || !password || !privateKey_enc) {
+                    TransError = '参数有误~';
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: TransError, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+                }
+
+                // 引入核心模块
+                var Wallet = ethers.Wallet;
+
+                // 解密私钥
+                var privateKey = Decrypt(privateKey_enc, password);
+                console.log('privateKey: ' + privateKey);
+                if (!privateKey) {
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: errorMsg, info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+
+                }
+
+                // 初始化私钥,并判断地址是否一样
+                var wallet = new Wallet(privateKey);
+                console.log('Address: ' + wallet.address.toLocaleLowerCase());
+                console.log('AddressLOW: ' + address.toLocaleLowerCase());
+                if (wallet.address.toLocaleLowerCase() != address.toLocaleLowerCase()){
+
+                    /*交互app*/
+                    var dataJson = {status: false, msg: '钱包地址有误，请联系客服~', info: 0};
+                    console.log("dataArr: " + JSON.stringify(dataJson));
+                    Interactive.transFerEth(JSON.stringify(dataJson));
+                    return false;
+
+                }
+
+                /*交互app*/
+                var dataJson = {status: true, type : 3, msg: 'privateKey信息~', info: privateKey};
+                console.log("dataArr: " + JSON.stringify(dataJson));
+                Interactive.transFerEth(JSON.stringify(dataJson));
+                return true;
+            }
+
+
+
+
+</script>
+
+</body>
+</html>

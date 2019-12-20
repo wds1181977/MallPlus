@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.login.LoginActivity">
+
+    <EditText
+        android:id="@+id/fg_register_code"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_grayline_bottom"
+        android:hint="@string/email_or_telephone"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/textSize14sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15">
+
+        <EditText
+            android:id="@+id/fg_register_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:background="@drawable/shape_grayline_bottom"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLength="21"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/textSize14sp" />
+
+        <CheckBox
+            android:id="@+id/cb_confirm_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:button="@drawable/checkbox_password_selector"
+            android:paddingRight="@dimen/dp2" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/fg_login_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginRight="@dimen/dp15"
+        android:textColor="@color/red"
+        android:textSize="@dimen/textSize12sp" />
+
+    <Button
+        android:id="@+id/fg_register_submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp45"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp30"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_radio_btn"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize16sp" />
+
+    <TextView
+        android:id="@+id/fg_login_forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp10"
+        android:text="@string/forget_pwd_new"
+        android:visibility="gone"/>
+</LinearLayout>

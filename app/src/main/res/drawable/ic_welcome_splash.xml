@@ -1,0 +1,17 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"> xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--这里是设置progressbar的背景样式-->
+    <item>
+       <shape>
+           <solid android:color="@color/white" />
+       </shape>
+
+    </item>
+
+
+    <item android:bottom="0dp">
+        <bitmap
+            android:src="@mipmap/icon_welcome_default"
+            android:gravity="center"/>
+    </item>
+
+</layer-list>

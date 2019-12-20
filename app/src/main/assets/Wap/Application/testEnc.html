@@ -1,0 +1,38 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--引入js 加密解密文件-->
+    <script src="../Plugins/CryptoJS/crypto-js.js"></script>
+    <script src="../Public/js/crypto-api-0.0.1.js"></script>
+    <script src="../Plugins/md5/md5.js"></script>
+    <script>
+
+    //加密
+        function privateKeyEncrypt(private,address){
+            var private_enc = Encrypt(private,address);
+             /*交互app*/
+            <!--var dataJson = {privateKey: privateKey_enc};-->
+            Interactive.privateKeyEncrypt(private_enc);
+        }
+
+        //解密
+        function privateKeyDecrypt(privateKey_enc, mnemonic_enc,password){
+            var private_dec =  Decrypt(privateKey_enc, password);
+            var mnemonic_dec =  Decrypt(mnemonic_enc, password);
+
+            var dataJson = {privateKey: private_dec, mnemonic: mnemonic_dec};
+
+           Interactive.privateKeyDecrypt(JSON.stringify(dataJson));
+            <!--Interactive.privateKeyDecrypt(private_dec);-->
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

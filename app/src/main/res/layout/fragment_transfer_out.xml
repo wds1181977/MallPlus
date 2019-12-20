@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/translate"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:background="@drawable/shape_radio_arround_3"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp">
+
+
+            <TextView
+                android:id="@+id/dialog_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/string_dbm_tibi"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp18"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:id="@+id/quite_layout"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp5">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/icon_quit" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp40"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/string_dbm_transfer_out_address"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+
+            <com.tymall.view.ClearEditText
+                android:id="@+id/edit_address_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_address"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/string_dbm_transfer_out_address_input"
+                android:digits="0123456789qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/color_exchange_hint_text"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="14sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginRight="@dimen/dp50"
+                android:singleLine="true"
+
+                />
+
+
+            <LinearLayout
+                android:id="@+id/qrcode_layout"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/icon_qrcode" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp22"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp20"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvAamount"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/string_dbm_transfer_out_amount"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+
+            <com.tymall.view.ClearEditText
+                android:id="@+id/edit_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tvAamount"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/string_dbm_transfer_out_amount_input"
+                android:imeOptions="actionSearch"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/color_exchange_hint_text"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="14sp"
+                android:maxLines="1"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp22"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp20"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/available_alance"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/tv_amount_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_amount"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/amount_loading"
+                style="@style/SpinKitView.Small.ThreeBounce"
+                android:layout_toRightOf="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                app:SpinKit_Color="@color/black_deep" />
+
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp22"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp20"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_fee"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/string_dbm_transfer_out_fee"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/tv_fee_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_fee"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/fee_loading"
+                style="@style/SpinKitView.Small.ThreeBounce"
+                android:layout_toRightOf="@+id/tv_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                app:SpinKit_Color="@color/black_deep"
+                android:visibility="gone"/>
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp22"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp20"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_gas"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/string_dbm_transfer_out_gas"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/tv_gas_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_gas"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/gas_loading"
+                style="@style/SpinKitView.Small.ThreeBounce"
+                android:layout_toRightOf="@+id/tv_gas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                app:SpinKit_Color="@color/black_deep"
+                android:visibility="gone"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp22"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp20"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_pwd"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/string_dbm_transfer_out_pwd"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+
+            <com.tymall.view.ClearEditText
+                android:id="@+id/edit_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_pwd"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/string_dbm_transfer_out_pwd"
+                android:imeOptions="actionSearch"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/color_exchange_hint_text"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="14sp"
+                android:maxLines="1"
+                android:layout_toLeftOf="@+id/cb_confirm_password"
+                android:layout_marginRight="@dimen/dp10"
+               />
+
+
+            <CheckBox
+                android:id="@+id/cb_confirm_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp10"
+                android:button="@drawable/checkbox_password_selector"
+                android:paddingRight="@dimen/dp2" />
+
+
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/tranfer_button"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp60"
+            android:layout_marginBottom="@dimen/dp40"
+            android:background="@drawable/shape_radio_btn_tr"
+            android:text="@string/string_dbm_transfer_out"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize16sp" />
+
+
+    </LinearLayout>
+</LinearLayout>
