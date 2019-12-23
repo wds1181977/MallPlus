@@ -113,7 +113,7 @@ public class DBMallHomeFragment extends XBaseFragment implements JDHeaderView.Re
 
     List<GoodsListNewModel.RecordsBean> goodsList = new ArrayList<>();
     List<DBMallBannerModel> bannerList = new ArrayList<>();
-    List<DBMallPageModel.RecordsBean> pageList = new ArrayList<>();
+    List<DBMallPageModel> pageList = new ArrayList<>();
     List<String> imagesUrls = new ArrayList<>();
 
     private DBMallHomeAdapter adapter_footer, adapter_page, adapter_banner = null;
@@ -506,7 +506,7 @@ public class DBMallHomeFragment extends XBaseFragment implements JDHeaderView.Re
 
 
                 try {
-                    DBMallPageModel.RecordsBean data = pageList.get(position);
+                    DBMallPageModel data = pageList.get(position);
                     if (data == null) {
                         return;
                     }
@@ -514,20 +514,20 @@ public class DBMallHomeFragment extends XBaseFragment implements JDHeaderView.Re
                     LinearLayout linearLayout = (LinearLayout) holder.itemView;
                     ImageView pageImg = (ImageView) linearLayout.findViewById(R.id.page_img);
                     TextView pageText = (TextView) linearLayout.findViewById(R.id.page_text);
-                    pageText.setText(TextUtils.isEmpty(data.getName()) ? "" : data.getName());
+                    pageText.setText(TextUtils.isEmpty(data.getTitle()) ? "" : data.getTitle());
                     if (data.getIcon() != null) {
                         Glide.with(holder.itemView.getContext()).load(data.getIcon()).apply(options).into(pageImg);
                     }
                     holder.itemView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            DBMallPageModel.RecordsBean  recommendBean = pageList.get(position);
+                            DBMallPageModel  recommendBean = pageList.get(position);
                             if (recommendBean == null) {
                                 return;
                             }
                             if (recommendBean != null ) {
                                     Intent intent = new Intent(getActivity(), DBMallGoodsListActivity.class);
-                                    intent.putExtra(Constant.MALL_TITLE, recommendBean.getName());
+                                    intent.putExtra(Constant.MALL_TITLE, recommendBean.getTitle());
                                     intent.putExtra(Constant.GOODS_ID, recommendBean.getId());
                                     startActivity(intent);
                             }
@@ -726,19 +726,18 @@ public class DBMallHomeFragment extends XBaseFragment implements JDHeaderView.Re
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())//
-                .subscribe(new BaseSubscriber<MallResponse<DBMallPageModel>>() {
+                .subscribe(new BaseSubscriber<MallResponse<List<DBMallPageModel>>>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
                         addDisposable(d);
                     }
 
                     @Override
-                    public void onNext(@NonNull MallResponse<DBMallPageModel> response) {
+                    public void onNext(@NonNull MallResponse<List<DBMallPageModel>> response) {
                         if (CommonParametersUtils.checkToken(getContext(), response)) {
 
                             try {
-                                DBMallPageModel  data = response.getData();
-                                pageList = data.getRecords();
+                                pageList = response.getData();
 
                                  adapter_page.notifyDataSetChanged();
 

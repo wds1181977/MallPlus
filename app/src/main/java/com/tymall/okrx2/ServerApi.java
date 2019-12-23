@@ -41,7 +41,7 @@ public class ServerApi {
     String  Login = BaseURL + "/api/single/home/login"; //登录
     String  Register = BaseURL + "/api/single/home/simpleReg"; //注册
     String  Banner = BaseURL + "/api/single/home/bannerList"; //Banner
-    String  getGoodsMode = BaseURL + "/api/single/pms/productCategory/list"; //商品分类
+    String  getGoodsMode = BaseURL + "/api/home/navList"; //商品分类
     String  getGoodsList = BaseURL + "/api/single/pms/goods/list"; //商品列表
 
 
@@ -164,20 +164,20 @@ public class ServerApi {
                 .adapt(new ObservableBody<MallResponse<List<DBMallBannerModel>>>());
     }
 
-    public Observable<MallResponse<DBMallPageModel>> getGoodsMode(Context context) {
+    public Observable<MallResponse<List<DBMallPageModel>>> getGoodsMode(Context context) {
         Map<String, String> params = new HashMap<>();
         params.put("pageNum", 1+"");
         params.put("pageSize", SIZE+"");
         sign(params);
-        return OkGo.<MallResponse<DBMallPageModel>>get(getGoodsMode)
+        return OkGo.<MallResponse<List<DBMallPageModel>>>get(getGoodsMode)
                 .params(params)
                 .headers("'storeid'", "2")
                 .headers("'authorization2'",CacheUtils.getDBMallToken())
                 .cacheKey(getGoodsMode+ getUserId())
                 .cacheMode(CacheMode.FIRST_CACHE_THEN_REQUEST)
-                .converter(new JsonConvert<MallResponse<DBMallPageModel>>() {
+                .converter(new JsonConvert<MallResponse<List<DBMallPageModel>>>() {
                 })
-                .adapt(new ObservableBody<MallResponse<DBMallPageModel>>());
+                .adapt(new ObservableBody<MallResponse<List<DBMallPageModel>>>());
     }
 
     public Observable<MallResponse<GoodsListNewModel>> categoryGoodlist(Context context, String page) {
