@@ -119,7 +119,7 @@ public class DBMallHomeFragment extends XBaseFragment implements JDHeaderView.Re
     private DBMallHomeAdapter adapter_footer, adapter_page, adapter_banner = null;
     public DBMallMainGoodsListAdapter adapter_goods = null;
 
-    private int pageNum = 10;
+    private int pageNum = 5;
     private int pageCulumn = 5;
     private boolean hasMore = true;
     private int page = 1;
@@ -403,6 +403,7 @@ public class DBMallHomeFragment extends XBaseFragment implements JDHeaderView.Re
     }
 
     private void refreshData() {
+        LogUtil.d("wds","refreshData");
         page = 1;
         hasMore = true;
         refreshBannerData();
@@ -631,6 +632,8 @@ public class DBMallHomeFragment extends XBaseFragment implements JDHeaderView.Re
             @Override
             public void onRefreshBegin(PtrFrameLayout frame) {
                 isShow = false;
+                LogUtil.d("wds","onRefreshBegin");
+
                 refreshData();
             }
         });
@@ -714,7 +717,7 @@ public class DBMallHomeFragment extends XBaseFragment implements JDHeaderView.Re
 
 
     public void refreshPageData() {
-
+  LogUtil.d("wds","refreshPageData");
 
         ServerApi.getInstance().getGoodsMode(getContext())
                 .subscribeOn(Schedulers.io())
@@ -738,8 +741,15 @@ public class DBMallHomeFragment extends XBaseFragment implements JDHeaderView.Re
 
                             try {
                                 pageList = response.getData();
+                                if (pageList != null && pageList.size() > 0) {
+                                    pageNum = pageList.size();
+                                    if (pageNum > 10) {
+                                        pageNum = 10;
+                                    }
 
-                                 adapter_page.notifyDataSetChanged();
+
+                                }
+                                adapter_page.notifyDataSetChanged();
 
 
                             } catch (Exception e) {

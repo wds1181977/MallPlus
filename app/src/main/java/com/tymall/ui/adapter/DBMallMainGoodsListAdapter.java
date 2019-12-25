@@ -1,19 +1,25 @@
 package com.tymall.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.tymall.R;
+import com.tymall.base.BaseActivity;
 import com.tymall.model.GoodsListNewModel;
+import com.tymall.ui.mall.DBMallH5Activity;
+import com.tymall.utils.ClickOnUtils;
+import com.tymall.view.CustomRoundAngleImageView;
 
 import java.util.List;
 
@@ -52,7 +58,7 @@ public class DBMallMainGoodsListAdapter extends DelegateAdapter.Adapter<Recycler
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_dbmall_goods_list_main, parent, false);
+                .inflate(R.layout.item_dbmall_goods_list, parent, false);
         return new RecyclerViewItemHolder(view);
     }
 
@@ -66,37 +72,22 @@ public class DBMallMainGoodsListAdapter extends DelegateAdapter.Adapter<Recycler
 
         try {
             if (!TextUtils.isEmpty(mData.get(position).getPic())) {
-                Glide.with(holder.itemView.getContext()).load(data.getPic()).apply(options).into(recyclerViewHolder.goods_entry);
+                Glide.with(holder.itemView.getContext()).load(data.getPic()).apply(options).into(recyclerViewHolder.goodsImage);
             }
-//            recyclerViewHolder.goods_entry.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    if(data == null || TextUtils.isEmpty(data.getCategoryGoodUrl())){
-//                        return;
-//                    }
-//                    if (ClickOnUtils.isFastClick())
-//                        DBMallH5Activity.openH5((BaseActivity)holder.itemView.getContext(),data.getCategoryGoodUrl(),TextUtils.isEmpty(data.getName())?"":data.getName());
-//                }
-//            });
 
-//            RecyclerView mRecyclerView = recyclerViewHolder.recyclerView;
-//            mRecyclerView.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-//            GoodsListNewAdapter mAdapter = new GoodsListNewAdapter();
-//            mRecyclerView.setAdapter(mAdapter);
-//            if(data != null  && data.getGoodsList() != null) {
-//                mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-//                        GoodsListNewModel.CategoryGoodListBean.GoodsListBean goodsListBean = data.getGoodsList().get(position);
-//                        if (goodsListBean == null || TextUtils.isEmpty(goodsListBean.getGoodDetailsUrl())) {
-//                            return;
-//                        }
-//                        if (ClickOnUtils.isFastClick())
-//                            DBMallH5Activity.openH5((BaseActivity) holder.itemView.getContext(), goodsListBean.getGoodDetailsUrl(), TextUtils.isEmpty(goodsListBean.getName()) ? "" : goodsListBean.getName());
-//                    }
-//                });
-//                mAdapter.setNewData(data.getGoodsList());
-//            }
+            recyclerViewHolder.  dbmPrice.setText(data.getOriginalPrice());
+
+
+
+            holder.itemView.setOnClickListener(v -> {
+//
+//                if (data == null || TextUtils.isEmpty(data.getGoodDetailsUrl())) {
+//                    return;
+//                }
+//                if (ClickOnUtils.isFastClick())
+//                    DBMallH5Activity.openH5((BaseActivity)holder.itemView.getContext(), data.getGoodDetailsUrl(), TextUtils.isEmpty(data.getName()) ? "" : data.getName());
+
+            });
 
 
         } catch (Exception e) {
@@ -120,11 +111,29 @@ public class DBMallMainGoodsListAdapter extends DelegateAdapter.Adapter<Recycler
         public RecyclerView recyclerView;
         public ImageView goods_entry;
 
+        public CustomRoundAngleImageView goodsImage;
+        public TextView goodsTitle;
+        public TextView originalPrice;
+        public TextView dbmRatePrice;
+        public  TextView dbmPrice;
+        public TextView cashBackPrice;
+        public  TextView salesVolume,coinType;
+
 
         public RecyclerViewItemHolder(View itemView) {
             super(itemView);
             goods_entry = itemView.findViewById(R.id.goods_entry);
             recyclerView = itemView.findViewById(R.id.recycler_view);
+
+            goodsImage =itemView.findViewById(R.id.goods_image);
+            goodsTitle = itemView.findViewById(R.id.goods_title);
+            originalPrice = itemView.findViewById(R.id.originalPrice);
+            dbmRatePrice = itemView.findViewById(R.id.dbmRatePrice);
+            originalPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG); //中间横线
+            dbmPrice = itemView.findViewById(R.id.dbmPrice);
+            cashBackPrice = itemView.findViewById(R.id.cash_back_price);
+            salesVolume = itemView.findViewById(R.id.sales_volume);
+            coinType = itemView.findViewById(R.id.coinType);
 
 
         }
