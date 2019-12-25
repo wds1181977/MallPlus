@@ -150,7 +150,7 @@ public class GoodsListNewModel implements Serializable {
         private String usePointLimit;
         private String subTitle;
         private String description;
-        private int originalPrice;
+        private String originalPrice;
         private int stock;
         private int lowStock;
         private String unit;
@@ -391,11 +391,11 @@ public class GoodsListNewModel implements Serializable {
             this.description = description;
         }
 
-        public int getOriginalPrice() {
+        public String getOriginalPrice() {
             return originalPrice;
         }
 
-        public void setOriginalPrice(int originalPrice) {
+        public void setOriginalPrice(String originalPrice) {
             this.originalPrice = originalPrice;
         }
 

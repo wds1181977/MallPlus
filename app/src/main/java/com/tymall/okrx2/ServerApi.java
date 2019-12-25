@@ -183,7 +183,7 @@ public class ServerApi {
     public Observable<MallResponse<GoodsListNewModel>> categoryGoodlist(Context context, String page) {
         Map<String, String> params = new HashMap<>();
         params.put("pageNum", page);
-        params.put("pageSize", SIZE+"");
+        params.put("pageSize", 20+"");
         sign(params);
         return OkGo.<MallResponse<GoodsListNewModel>>get(getGoodsList)
                 .params(params)

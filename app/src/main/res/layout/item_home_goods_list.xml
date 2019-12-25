@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <ImageView
+            android:id="@+id/goods_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@mipmap/icon_bank_banner"
+            />
+
+
+        <TextView
+            android:id="@+id/goods_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/color_box_bg_title_color"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/goods_image"
+            android:layout_marginTop="@dimen/dp6"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp_10"/>
+
+
+        <TextView
+            android:id="@+id/goods_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/setting_sign_out_color"
+            android:textSize="14sp"
+            android:text="sd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/goods_title"
+            android:layout_marginTop="@dimen/dp6"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp_10"/>
+
+
+
+
+        <TextView
+            android:id="@+id/goods_sales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/setting_gray_color"
+            android:textSize="11sp"
+            android:text="s"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/goods_price"
+            android:layout_marginTop="@dimen/dp6"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp_10"/>
+
+
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

@@ -1372,5 +1372,6 @@
 
     <string name="string_introduce_title_three">广告流量变现</string>
     <string name="string_introduce_title_content_three">邀请好友投票，躺着把钱赚</string>
+    <string name="string_dbmall_novigation_sales">销量：</string>
 
 </resources>

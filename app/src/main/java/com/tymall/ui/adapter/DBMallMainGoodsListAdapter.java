@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
+import com.alibaba.android.vlayout.layout.GridLayoutHelper;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.tymall.R;
@@ -44,7 +45,7 @@ public class DBMallMainGoodsListAdapter extends DelegateAdapter.Adapter<Recycler
             .fallback(R.mipmap.icon_shop_default) //url为空的时候,显示的图片
             .error(R.mipmap.icon_shop_default);//图片加载失败后，显示的图片
 
-    public DBMallMainGoodsListAdapter(Context context, List<GoodsListNewModel.RecordsBean> mData, LayoutHelper helper) {
+    public DBMallMainGoodsListAdapter(Context context, List<GoodsListNewModel.RecordsBean> mData, GridLayoutHelper helper) {
         this.mContext = context;
         this.mData = mData;
         this.mHelper = helper;
@@ -58,7 +59,7 @@ public class DBMallMainGoodsListAdapter extends DelegateAdapter.Adapter<Recycler
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_dbmall_goods_list, parent, false);
+                .inflate(R.layout.item_home_goods_list, parent, false);
         return new RecyclerViewItemHolder(view);
     }
 
@@ -71,12 +72,15 @@ public class DBMallMainGoodsListAdapter extends DelegateAdapter.Adapter<Recycler
 
 
         try {
-            if (!TextUtils.isEmpty(mData.get(position).getPic())) {
+            if (!TextUtils.isEmpty(data.getPic())) {
                 Glide.with(holder.itemView.getContext()).load(data.getPic()).apply(options).into(recyclerViewHolder.goodsImage);
             }
 
-            recyclerViewHolder.  dbmPrice.setText(data.getOriginalPrice());
-
+            recyclerViewHolder.goods_price.setText(TextUtils.isEmpty(data.getOriginalPrice()) ? "" :  " ¥ "+data.getOriginalPrice());
+            recyclerViewHolder.goodsTitle.setText(TextUtils.isEmpty(data.getName()) ? "" :  data.getName());
+            String tv = mContext.getString(R.string.string_dbmall_novigation_sales);
+            String unit = TextUtils.isEmpty(data.getUnit()) ? "" :data.getUnit();
+            recyclerViewHolder.goods_sales.setText(tv+data.getSale()+unit);
 
 
             holder.itemView.setOnClickListener(v -> {
@@ -108,32 +112,24 @@ public class DBMallMainGoodsListAdapter extends DelegateAdapter.Adapter<Recycler
      */
     private class RecyclerViewItemHolder extends RecyclerView.ViewHolder {
 
-        public RecyclerView recyclerView;
-        public ImageView goods_entry;
 
-        public CustomRoundAngleImageView goodsImage;
+
+        public ImageView goodsImage;
         public TextView goodsTitle;
-        public TextView originalPrice;
-        public TextView dbmRatePrice;
-        public  TextView dbmPrice;
-        public TextView cashBackPrice;
-        public  TextView salesVolume,coinType;
+        public TextView goods_price;
+        public  TextView goods_sales;
+
 
 
         public RecyclerViewItemHolder(View itemView) {
             super(itemView);
-            goods_entry = itemView.findViewById(R.id.goods_entry);
-            recyclerView = itemView.findViewById(R.id.recycler_view);
+
 
             goodsImage =itemView.findViewById(R.id.goods_image);
             goodsTitle = itemView.findViewById(R.id.goods_title);
-            originalPrice = itemView.findViewById(R.id.originalPrice);
-            dbmRatePrice = itemView.findViewById(R.id.dbmRatePrice);
-            originalPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG); //中间横线
-            dbmPrice = itemView.findViewById(R.id.dbmPrice);
-            cashBackPrice = itemView.findViewById(R.id.cash_back_price);
-            salesVolume = itemView.findViewById(R.id.sales_volume);
-            coinType = itemView.findViewById(R.id.coinType);
+            goods_price = itemView.findViewById(R.id.goods_price);
+            goods_sales = itemView.findViewById(R.id.goods_sales);
+
 
 
         }
