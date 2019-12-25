@@ -560,10 +560,9 @@ public class DBMallHomeFragment extends XBaseFragment implements JDHeaderView.Re
         //Goods List 布局
         GridLayoutHelper mGoodlayoutHelper;
         mGoodlayoutHelper = new GridLayoutHelper(2);
-//        mGoodlayoutHelper.setAspectRatio(1f);
-//        mGoodlayoutHelper.setVGap(0);// 控制子元素之间的垂直间距
-//        mGoodlayoutHelper.setHGap(0);// 控制子元素之间的水平间距
-//        mGoodlayoutHelper.setMargin(0, 0, 0, 0);
+        mGoodlayoutHelper.setVGap(20);// 控制子元素之间的垂直间距
+        mGoodlayoutHelper.setHGap(0);// 控制子元素之间的水平间距
+        mGoodlayoutHelper.setMargin(0, 0, 0, 0);
         adapter_goods = new DBMallMainGoodsListAdapter(getActivity(), goodsList, mGoodlayoutHelper);
         adapters.add(adapter_goods);
 

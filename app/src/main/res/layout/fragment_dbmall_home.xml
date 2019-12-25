@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:id="@+id/rootView"
-    tools:context=".ui.mall.DBMallActivity">
+    tools:context=".ui.MainActivity">
 
 
     <android.support.v7.widget.Toolbar
@@ -68,6 +68,7 @@
                     android:layout_marginLeft="@dimen/dp11"
                     android:layout_marginRight="@dimen/dp11"
                     android:src="@mipmap/icon_dbmall_back"
+                    android:visibility="invisible"
                     />
 
             </LinearLayout>

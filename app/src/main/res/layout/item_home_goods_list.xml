@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:roundiv="http://schemas.android.com/tools">
 
     <data>
 
@@ -9,18 +10,20 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
 
         >
 
         <ImageView
             android:id="@+id/goods_image"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@mipmap/icon_bank_banner"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp_10"
             />
 
 
@@ -45,10 +48,10 @@
             android:layout_height="wrap_content"
             android:textColor="@color/setting_sign_out_color"
             android:textSize="14sp"
-            android:text="sd"
+            android:text=""
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/goods_title"
-            android:layout_marginTop="@dimen/dp6"
+            android:layout_marginTop="@dimen/dp4"
             android:layout_marginLeft="@dimen/dp10"
             android:layout_marginRight="@dimen/dp_10"/>
 
@@ -61,15 +64,13 @@
             android:layout_height="wrap_content"
             android:textColor="@color/setting_gray_color"
             android:textSize="11sp"
-            android:text="s"
+            android:text=""
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/goods_price"
-            android:layout_marginTop="@dimen/dp6"
+            android:layout_marginTop="@dimen/dp4"
             android:layout_marginLeft="@dimen/dp10"
-            android:layout_marginRight="@dimen/dp_10"/>
-
-
-
+            android:layout_marginRight="@dimen/dp_10"
+            />
 
 
 
